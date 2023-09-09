@@ -1,5 +1,11 @@
-### Hi there 👋
+### Somos um grupo de alunas de Ciência da Computação - 2° termo 👋
 
+Giovana Oliveira 
+Giovana Castro  
+Isabella Estella  
+Marcela Coenglian  
+Amanda Acosta 
+Beatriz Barbosa 
 <!--
 **ProjetoIntegrador23/projetoIntegrador23** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
