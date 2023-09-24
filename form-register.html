@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto Integrador | Cadastro de usuário</title>
+    <link rel="icon" href="./img/logo/logoPrincipal.png" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/form-register.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- JS -->
+    <script
+    src="https://kit.fontawesome.com/026675cdf7.js"
+    crossorigin="anonymous"
+  ></script>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <figure class="container-logo">
+          <img
+            src="./img/logo/logoPrincipal.png"
+            alt="Logo do site - Um raio com amarela em torno de duas flexas, de cores azul forte e amarela, em forma de circulo"
+          />
+        </figure>
+        <div class="content_register contentInfomation">
+          <div class="content_inputs">
+            <div class="inputs_left">
+              <div class="input_field">
+                <p>Nome completo</p>
+                <input type="text" name="nameUser" />
+              </div>
+
+              <div class="input_field">
+                <p>E-mail</p>
+                <input type="email" name="emailUser" />
+              </div>
+
+              <div class="input_field">
+                <p>Endereço</p>
+                <input type="text" name="adreessUser" />
+              </div>
+
+              <div class="input_local">
+                <div class="input_field">
+                  <p>Bairro</p>
+                  <input type="text" name="districtUser" />
+                </div>
+
+                <div class="input_field">
+                  <p>Cidade</p>
+                  <input type="text" name="cityUser" />
+                </div>
+              </div>
+
+              <div class="additional_fields">
+                <div class="input_field">
+                  <p>Número de pessoas na resiência</p>
+                  <input type="number" name="numberPeople" />
+                </div>
+
+                <div class="input_field">
+                  <p>Senha</p>
+                  <input type="password" name="passwordUser" />
+                </div>
+              </div>
+            </div>
+
+            <div class="inputs_right">
+              <div class="input_field">
+                <p>
+                  Em média, seus principais equipamentos eletricos ficam ligados
+                  por quantas horas
+                </p>
+                <div class="hours">
+                  <input type="number" name="hoursUser" />
+                  <p>Horas</p>
+                </div>
+              </div>
+
+              <div class="input_field">
+                <p>Defina uma meta de consumo de energia</p>
+                <div class="kwm">
+                  <input type="number" name="consumptionUser" />
+                  <p>KWH</p>
+                </div>
+              </div>
+
+              <div class="description_content">
+                <p>
+                  <strong>Obs:</strong> A média de consumo de energia por
+                  resiência no Brasil é de 154(KWh).
+                </p>
+                <p>
+                  Contudo, dependendo da quantidade de pessoas na resiência, e
+                  pela necessidade de cada familiar, esse valor pode ser
+                  diferente.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="buttonNext">
+            <button>Próximo</button>
+          </div>
+        </div>
+        <div class="content_register contentConnection">
+          <div class="content_inputs contentInputsConnection">
+            <div class="inputs_left inputsConnection">
+              <div class="input_field">
+                <p>Nome da rede wi-fi</p>
+                <input type="text" name="netUser" />
+              </div>
+              <div class="input_field">
+                <p>Senha da rede wi-fi</p>
+                <input type="password" name="netPasswordUser" />
+              </div>
+              <div class="input_field">
+                <p>Endereço MAC do módulo de wi-fi do cirucito</p>
+                <input type="text" name="adreessMacModulo" />
+              </div>
+            </div>
+            <div class="field_right">
+              <p>
+                Recomendamos que cadastre a sua rede wi-fi principal da
+                residência, pois, as informações serão passadas a partir de uma
+                conexão estavel a um provedor de internet/wi-fi.
+              </p>
+              <p>
+                Nos comprometemos a deixar suas informações seguras e
+                atualizações e aprimoramento serão sendo lançadas em breve.
+              </p>
+              <p>
+                Informamos que as informações aqui passadas são de acordo com os
+                valores e métricas seguidas pela CPFL Paulista 2023.
+              </p>
+            </div>
+          </div>
+          <div class="follow_buttons">
+            <button class="buttonPrevious">Anterior</button>
+            <button class="buttonRegister">Conectar</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

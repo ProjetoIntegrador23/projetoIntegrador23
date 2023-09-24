@@ -1,0 +1,130 @@
+main {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.container_title {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.container_title h1 {
+  color: #000;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.container_historic-register {
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 4fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+.card-month {
+  width: 352px;
+  height: 298px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 26px;
+  padding: 20px;
+  text-align: center;
+}
+
+.month,
+.consumption,
+.cost{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.month h2 {
+  color: #262424;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.month span,
+.consumption span,
+.cost span,
+.established-goal span {
+  color: #262424;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.indicator-goal{
+    width: 30px;
+    height: 30px;
+    border-radius:50%;
+    background-color: #07D227;
+}
+
+.established-goal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.established-goal span{
+   width:80%;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+    .card-month{
+        width:300px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 999px) {
+    .container_historic-register{
+        grid-template-columns: repeat(2, 6fr);
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .card-month{
+        width:350px;
+        height: 298px;
+    }
+    .container_historic-register{
+        grid-template-columns: repeat(1, 12fr);
+    }
+}
+
+@media screen and (max-width: 4000px) {
+    .card-month{
+        width: 90%;
+        min-height: 298px;
+        height: auto;
+    }
+}

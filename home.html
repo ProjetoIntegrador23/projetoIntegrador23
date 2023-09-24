@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto Integrador | Home</title>
+    <link rel="icon" href="./img/logo/logoPrincipal.png" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- JS -->
+    <script
+      src="https://kit.fontawesome.com/026675cdf7.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav class="header_navigation">
+        <figure class="navigation_header-logo">
+          <a href="./home.html">
+            <img
+              src="./img/logo/logoPrincipal.png"
+              class="header-logo"
+              alt="Logo do site - Um raio com amarela em torno de duas flexas, de cores azul forte e amarela, em forma de circulo"
+            />
+          </a>
+        </figure>
+        <div class="navigation_menu-mobile">
+          <div class="line-1"></div>
+          <div class="line-2"></div>
+          <div class="line-3"></div>
+        </div>
+        <ul class="navigation_header-menu">
+          <li class="header-menu_item">
+            <a href="./home.html">Consumos e custos </a>
+          </li>
+          <li class="header-menu_item">
+            <a href="./form-alter.html">Metas de Consumo</a>
+          </li>
+          <li class="header-menu_item">
+            <a href="./historic.html">Histórico de Consumo de Energia</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <section class="current_consumption">
+          <div class="current_consumption_graphic">
+            <div class="current_consumption-circle-progress">
+              <span class="progress-value">0%</span>
+            </div>
+            <div class="current_consumption_indicator">
+              <div class="indicator-colors">
+                <div class="indicator-color"></div>
+                <span>Consumo atual</span>
+              </div>
+              <div class="indicator-colors">
+                <div class="total-color"></div>
+                <span>Consumo médio por residência</span>
+              </div>
+            </div>
+          </div>
+          <div class="current_consumption_description">
+            <h2 class="consumption-information">
+              Atualmente, você está consumindo:
+            </h2>
+            <h2>100 KWh <i class="fa-solid fa-bolt"></i></h2>
+          </div>
+        </section>
+        <section class="current_consumption-progress">
+          <div class="consumption-goal">
+            <h2>Sua meta de consumo mensal de energia é de:</h2>
+            <h2 class="goal">165(KWh)</h2>
+            <span
+              >Você tem ainda: <b class="rest-goal">65KWh</b> para consumir
+            </span>
+          </div>
+          <div class="consumption-progress">
+            <div class="consumption_progress-bar">
+              <div class="indicator-progress-bar" data-progress="40"></div>
+            </div>
+            <ul class="consumption_indicators-items">
+              <li class="consumption_indicators-item">
+                <div class="indicator indicator-good"></div>
+                <span>
+                  Até o momento, você está dentro da sua meta de consumo !
+                </span>
+              </li>
+              <li class="consumption_indicators-item">
+                <div class="indicator indicator-average"></div>
+                <span>O seu consumo de energia está alcançando sua meta!</span>
+              </li>
+              <li class="consumption_indicators-item">
+                <div class="indicator indicator-attention"></div>
+                <span
+                  >Você consumiu mais energia do que a meta estabelecida!</span
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="consumption_cost-tips">
+          <div class="consumption-cost">
+            <h2>O custo estimado para seu consumo atual de energia é de:</h2>
+            <h1>R$ 24,00</h1>
+            <div class="consumption-cost-information">
+              <span
+                >A partir dos dados da CPFL, o valor a ser cobrado por KWH
+                são:</span
+              >
+              <ul class="cost-information">
+                <li class="information-item">
+                  <i class="fa-solid fa-house"></i>
+                  <span>R$ 0,89 por KWh para a tarifa residencial (B1)</span>
+                </li>
+                <li class="information-item">
+                  <i class="fa-solid fa-business-time"></i>
+                  <span
+                    >R$ 0,85 por KWh para tarifa comercial/industrial
+                    (B3).</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="consumption-tip">
+            <div class="card-consumption-tip">
+              <i class="fa-solid fa-lightbulb"></i>
+              <span class="title-tip"> Dica de ecnomia de energia </span>
+              <p>
+                Aproveite a Luz Natural e Ventilação: Abra cortinas e persianas
+                durante o dia para aproveitar a luz natural. Use ventiladores de
+                teto e abra janelas à noite para resfriamento, em vez de
+                depender de ar condicionado. Use termostatos programáveis para
+                otimizar o uso de aquecimento e resfriamento.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <span
+        >Projeto Integrador | Aplicação Simulação de Medição e Controle de
+        Energia Residêncial - Direitos Reservados
+      </span>
+    </footer>
+    <script src="./js/graphics.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
