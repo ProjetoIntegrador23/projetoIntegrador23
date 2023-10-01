@@ -185,7 +185,7 @@ class Usuario {
 //   // Métodos para ler sensores, calcular consumo, enviar dados, etc.
 // }
 
-// Exemplo de uso das classes
+
 const novoRegistro = new Usuario(
   nomeUsuario,
   emailUsuario,
