@@ -64,7 +64,7 @@ class Usuario {
   ) {
     this.nome = nome;
     this.email = email;
-    this.senha = senha; // Lembre-se de criptografar a senha antes de armazenar.
+    this.senha = senha; 
     this.endereco = endereco;
     this.bairro = bairro;
     this.cidade = cidade;
@@ -143,7 +143,7 @@ class Usuario {
     }
   }
 
-  // Outros métodos para atualizar informações, calcular consumo, etc.
+ 
 }
 
 // Classe para representar o consumo de energia
@@ -154,7 +154,7 @@ class Usuario {
 //     this.consumo = consumo;
 //   }
 
-//   // Métodos para calcular consumo, exibir histórico, etc.
+//   // Métodos para calcular consumo, exibir histórico
 // }
 
 // Classe para representar a estimativa de custo
@@ -164,7 +164,7 @@ class Usuario {
 //     this.consumo = consumo;
 //   }
 
-// Métodos para calcular custo estimado, exibir informações, etc.
+// Métodos para calcular custo estimado, exibir informações
 // }
 
 // Classe para representar o site e suas funcionalidades
@@ -173,13 +173,13 @@ class Usuario {
 //     // Inicializa o site, configura eventos, etc.
 //   }
 
-//   // Métodos para interagir com a interface do usuário, exibir informações, etc.
+//   // Métodos para interagir com a interface do usuário, exibir informações
 // }
 
 // Classe para representar o circuito de medidor de consumo
 // class CircuitoMedidor {
 //   constructor() {
-//     // Inicializa o circuito, configurações de hardware, comunicação, etc.
+//     // Inicializa o circuito, configurações de hardware, comunicação
 //   }
 
 //   // Métodos para ler sensores, calcular consumo, enviar dados, etc.
