@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "firebase": "^10.4.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  
+  "name": "public",
+  "version": "1.0.0",
+  "main": "init-firebase.js",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": ""
+}
