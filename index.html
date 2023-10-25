@@ -1,54 +1,170 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Integrador | Medidor de consumo de energia</title>
-    <link rel="icon" href="./img/logo/logoPrincipal.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu consumo de energia</title>
+    <link rel="icon" href="./img/logo/logoPrincipal.png" />
     <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css">
     <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/main.css"> 
     <!-- JS -->
     <script
-    src="https://kit.fontawesome.com/026675cdf7.js"
-    crossorigin="anonymous"
-  ></script>
-  <script>
-    const firebaseConfig = {
-  apiKey: "AIzaSyBOlATv13ZOA_pmmCwfh-iH2EvuI7-PDuM",
-  authDomain: "meuconsumodeenergiaweb.firebaseapp.com",
-  databaseURL: "https://meuconsumodeenergiaweb-default-rtdb.firebaseio.com",
-  projectId: "meuconsumodeenergiaweb",
-  storageBucket: "meuconsumodeenergiaweb.appspot.com",
-  messagingSenderId: "376629492849",
-  appId: "1:376629492849:web:984c2d29d8427a42d6afd0"
-};
-</script>
-</head>
-<body>
-    <main>
-        <div class="container">
-            <form active="#" method="post" class="container_form-loin">
-                <div class="form-login_logo">
-                    <figure>
-                        <img src="./img/logo/logoPrincipal.png" alt="Logo do site - Um raio com amarela em torno de duas flexas, de cores azul forte e amarela, em forma de circulo">
-                    </figure>
-                </div>
-                <div class="form-login-inputs">
-                    <label for="login-email">
-                        <input type="email" name="login-email" id="email-user" placeholder="Digite seu e-mail" required>
-                    </label>
-                    <label for="login-password">
-                        <input type="password" name="login-password" id="password-user" placeholder="Digite sua senha" required>
-                    </label>
-                    <span>Não tem um cadastro? <a href="./form-register.html">Cadastre-se agora!</a></span>
-                    <input type="submit" value="ENTRAR">
-                </div>
-            </form>
+      src="https://kit.fontawesome.com/026675cdf7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="header__navigation">
+        <div class="navigation__logo">
+          <figure>
+            <img
+              src="./img/logo/logoPrincipal.png"
+              alt="Logo do site - Um raio com amarela em torno de duas flexas, de cores azul forte e amarela, em forma de circulo"
+            />
+          </figure>
         </div>
+        <div class="navigation__menu">
+          <button id="btn-register"><a href="./register.html" >Cadastrar-se</a></button>
+          <button id="btn-login"><a href="./login.html" >Entrar</a></button>
+          <button class="menu__mode"></button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="main__container">
+        <section class="container__content">
+          <div class="content__description">
+            <h2>
+              Acesse agora e tenha controle total da eficiência energética da
+              sua residência!
+            </h2>
+          </div>
+          <div class="content__figure">
+            <figure>
+              <img
+                src="./img/circuito/imagem-animada-circuito.png"
+                alt="Imagem de um circuito com leds e uma lampada em cima de um arquino. Todos esse componentes estão em cima de uma placa de ensaio."
+              />
+            </figure>
+          </div>
+        </section>
+
+        <section class="container__compontes">
+          <ul class="componentes__items">
+            <li class="item">
+              <figure>
+                <img
+                  src="./img/componentes/arduino.png"
+                  alt="Imagem de um arduino"
+                />
+              </figure>
+              <span>Arduino Uno</span>
+            </li>
+            <li class="item">
+              <figure>
+                <img
+                  src="./img/componentes/sensor-corrente.png"
+                  alt="Imagem de um Sensor de Corrente ACS712"
+                />
+              </figure>
+              <span>Sensor de Corrente ACS712</span>
+            </li>
+            <li class="item">
+              <figure>
+                <img
+                  src="./img/componentes/esp32.png"
+                  alt="Imagem de uma ESP32"
+                />
+              </figure>
+              <span>ESP32</span>
+            </li>
+            <li class="item">
+              <figure>
+                <img
+                  src="./img/componentes/placaLCD.png"
+                  alt="Imagem de um display LCD 16 x 2"
+                />
+              </figure>
+              <span>Placa LCD 16 X 2</span>
+            </li>
+            <li class="item">
+              <figure>
+                <img
+                  src="./img/componentes/potenciometro.png"
+                  alt="Imagem de um potênciometro"
+                />
+              </figure>
+              <span>Potênciometro</span>
+            </li>
+            <li class="item">
+              <figure>
+                <img
+                  src="./img/componentes/bateria.png"
+                  alt="Imagem de uma bateria."
+                />
+              </figure>
+              <span>Bateria</span>
+            </li>
+            <li class="item">
+              <figure>
+                <img
+                  src="./img/componentes/placa-de-ensaio.png"
+                  alt="Imagem de um Placa de Ensaio e um conjunto de Jumps (fios que conectam os componentes no arduino e na placa de ensaio) de diversas cores."
+                />
+              </figure>
+              <span>Placa de Ensaio e Jumps</span>
+            </li>
+            <li class="item">
+              <figure>
+                <img
+                  src="./img/componentes/leds.png"
+                  alt="Imagem de 5 LEDs, das cores: azul, vermelho, transparente (ou branco), amarelo, verde."
+                />
+              </figure>
+              <span>LEDs</span>
+            </li>
+            <li class="item">
+              <figure>
+                <img
+                  src="./img/componentes/capacitor.png"
+                  alt="Imagem de um Capacitor Eletrolitico."
+                />
+              </figure>
+              <span>Capacitor Eletrolitico</span>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="container__circuit">
+        <div class="circuit__description">
+          <h3>
+            Um circuito voltado para medir a tensão, a intensidade e potência da
+            corrente eletrica entre os LEDs da maquete!
+          </h3>
+        </div>
+        <div class="circuit__figure">
+          <figure>
+            <img
+              src="./img/componentes/mapa-circuito.png"
+              alt="Imagem de um circuito de arduino e componentes utilizados conectados entre si. "
+            />
+          </figure>
+        </div>
+      </section>
     </main>
     <footer>
-        <span>Projeto Integrador | Aplicação Simulação de Medição e Controle de Energia Residêncial - Direitos Reservados </span>
+      <h4>
+        Projeto Integrador | Aplicação Simulação de Medição e Controle de
+        Energia Residêncial - Direitos Reservados
+      </h4>
     </footer>
-</body>
+    <script src="./js/carousels.js"></script>
+  </body>
 </html>
