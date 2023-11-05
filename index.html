@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+  <head> 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meu consumo de energia</title>
@@ -15,6 +15,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css"
     />
     <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <!-- JS -->
     <script
       src="https://kit.fontawesome.com/026675cdf7.js"
@@ -29,10 +30,12 @@
       <nav class="header__navigation">
         <div class="navigation__logo">
           <figure>
-            <img
-              src="./img/logo/logoPrincipal.png"
-              alt="Logo do site - Um raio com amarela em torno de duas flexas, de cores azul forte e amarela, em forma de circulo"
-            />
+            <a href="./index.html">
+              <img
+                src="./img/logo/logoPrincipal.png"
+                alt="Logo do site - Um raio com amarela em torno de duas flexas, de cores azul forte e amarela, em forma de circulo"
+              />
+            </a>
           </figure>
         </div>
         <div class="navigation__menu">
@@ -40,7 +43,8 @@
             <a href="./register.html">Cadastrar-se</a>
           </button>
           <button id="btn-login"><a href="./login.html">Entrar</a></button>
-          <button class="menu__mode"></button>
+          <!-- <div class="menu__mode">
+          </div> -->
         </div>
       </nav>
     </header>
@@ -56,8 +60,8 @@
           <div class="content__figure">
             <figure>
               <img
-                src="./img/circuito/imagem-animada-circuito.png"
-                alt="Imagem de um circuito com leds e uma lampada em cima de um arquino. Todos esse componentes estão em cima de uma placa de ensaio."
+                src="./img/geral/imagem-luz.png"
+                alt="Imagem"
               />
             </figure>
           </div>
@@ -151,8 +155,8 @@
         <section class="container__circuit">
           <div class="circuit__description">
             <h3>
-              Um circuito voltado para medir a tensão, a intensidade e potência da
-              corrente eletrica entre os LEDs da maquete!
+              Um circuito voltado para medir a tensão, a intensidade e potência
+              da corrente eletrica entre os LEDs da maquete!
             </h3>
           </div>
           <div class="circuit__figure">
@@ -169,7 +173,7 @@
     <footer>
       <h4>
         Projeto Integrador | Aplicação Simulação de Medição e Controle de
-        Energia Residêncial - Direitos Reservados
+        Energia Residêncial 
       </h4>
     </footer>
     <script src="./js/carousels.js"></script>

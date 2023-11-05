@@ -1,130 +1,249 @@
-main {
-  width: 100%;
-  height: auto;
+body {
+  background-color: #052545;
+  background-repeat: no-repeat;
 }
 
-.container {
+/* HEADER */
+header {
+width: 100%;
+height: 90px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto;
+max-width: 1440px;
+padding: 0 40px;
+}
+
+header .header__navigation {
+width: 100%;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+header .navigation__logo {
+width: 50px;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+header .navigation__logo figure {
+width: 50px;
+height: 50px;
+}
+
+header .navigation__logo figure img {
+width: 100%;
+height: 100%;
+object-fit: contain;
+}
+
+header .navigation__menu-mobile {
+width: 30px;
+height: 70px;
+display: none;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+gap: 5px;
+}
+
+header .navigation__menu-mobile div {
+width: 30px;
+height: 3px;
+border-radius: 20px;
+background-color: #fff;
+transition: all 0.5s ease;
+}
+
+header .navigation__menu {
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 20px;
+}
+
+header .navigation__menu li {
+list-style: none;
+}
+
+header .navigation__menu li a {
+color: #fff;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+header .navigation__menu li a:hover {
+color: #f7d90f;
+}
+
+/* MAIN */
+
+main{
   width: 100%;
-  min-height: 100%;
-  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  min-height: 80vh;
+}
+main .wrapper{
+  width: 600px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+.wrapper .header{
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+}
+.header .icons{
+  display: flex;
+}
+.header .icons span{
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #878787;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+}
+.icons span:last-child{
+  margin-right: -10px;
+}
+.header .icons span:hover{
+  background: #f2f2f2;
+}
+.header .current-date{
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+.calendar{
+  padding: 20px;
+}
+.calendar ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+.calendar .days{
+  margin-bottom: 20px;
+}
+.calendar li{
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+.calendar .weeks li{
+  font-weight: 500;
+  cursor: default;
+}
+.calendar .days li{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+.days li.inactive{
+  color: #aaa;
+}
+.days li.active{
+  color: #fff;
+}
+.days li::before{
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.days li.active::before{
+  background: #036;
+}
+.days li:not(.active):hover::before{
+  background: #f2f2f2;
+}
+
+/* FOOTER */
+
+footer {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   max-width: 1440px;
   margin: 0 auto;
 }
 
-.container_title {
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  margin: 30px 0;
-}
-
-.container_title h1 {
-  color: #000;
-  font-size: 24px;
-  font-weight: 400;
+footer h4 {
+  color: #fff;
+  font-family: "Poppins", "sans-serif";
   text-align: center;
-}
-
-.container_historic-register {
-  width: 100%;
-  padding: 10px;
-  height: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 4fr);
-  gap: 30px;
-  justify-items: center;
-}
-
-.card-month {
-  width: 352px;
-  height: 298px;
-  border-radius: 20px;
-  background: #fff;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 26px;
-  padding: 20px;
-  text-align: center;
-}
-
-.month,
-.consumption,
-.cost{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.month h2 {
-  color: #262424;
   font-size: 16px;
+  font-style: normal;
   font-weight: 400;
+  line-height: normal;
 }
 
-.month span,
-.consumption span,
-.cost span,
-.established-goal span {
-  color: #262424;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.indicator-goal{
-    width: 30px;
-    height: 30px;
-    border-radius:50%;
-    background-color: #07D227;
-}
-
-.established-goal {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 5px;
-}
-
-.established-goal span{
-   width:80%;
-}
-
-/* Responsive */
-@media screen and (max-width: 1200px) {
-    .card-month{
-        width:300px;
-        height: 250px;
-    }
-}
+/* RESPONSIVE */
 
 @media screen and (max-width: 999px) {
-    .container_historic-register{
-        grid-template-columns: repeat(2, 6fr);
-    }
+  header {
+    padding: 0 20px;
+  }
+  main .main__container {
+    padding: 0 20px;
+  }
+  header .navigation__menu-mobile {
+    display: flex;
+  }
+  header .navigation__menu {
+    position: absolute;
+    top: 85px;
+    width: 300px;
+    height: 300px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+    background-color: #fff;
+    z-index: 99;
+    transition: all 0.5s ease-in-out;
+    display: none;
+    right: 0;
+  }
+  header .navigation__menu.active {
+    transition: all 0.5s ease;
+    display: flex;
+  }
+  header .navigation__menu li a{
+    color: #000;
+  }
 }
 
-@media screen and (max-width: 750px) {
-    .card-month{
-        width:350px;
-        height: 298px;
-    }
-    .container_historic-register{
-        grid-template-columns: repeat(1, 12fr);
-    }
-}
-
-@media screen and (max-width: 4000px) {
-    .card-month{
-        width: 90%;
-        min-height: 298px;
-        height: auto;
-    }
+@media screen and (max-width: 650px) {
+  main .wrapper{
+    width: 95%;
+  }
 }

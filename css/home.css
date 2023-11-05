@@ -1,146 +1,265 @@
-main {
-  width: 100%;
-  height: auto;
+body {
+  background-image: linear-gradient(150deg, #052545 45%, #76b6ea 45%);
+  background-repeat: no-repeat;
 }
 
-.container {
-  width: 100%;
-  height: auto;
-  max-width: 1440px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
-}
 
-.current_consumption {
+/* HEADER */
+header {
   width: 100%;
-  min-height: 550px;
-  height: 550px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 0 40px;
 }
 
-.current_consumption_graphic {
-  width: 50%;
+header .header__navigation {
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
-  position: relative;
-  gap: 20px;
+  justify-content: space-between;
 }
 
-.current_consumption_indicator {
-  position: absolute;
-  right: -50px;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.indicator-colors {
+header .navigation__logo {
+  width: 50px;
+  height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+header .navigation__logo figure {
+  width: 50px;
+  height: 50px;
+}
+
+header .navigation__logo figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+header .navigation__menu-mobile {
+  width: 30px;
+  height: 70px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   gap: 5px;
 }
 
-.indicator-color {
-  width: 25px;
-  height: 25px;
-  border-radius: 10px;
-  background: #f7d90f;
+header .navigation__menu-mobile div {
+  width: 30px;
+  height: 3px;
+  border-radius: 20px;
+  background-color: #000;
+  transition: all 0.5s ease;
 }
 
-.total-color {
-  width: 25px;
-  height: 25px;
-  border-radius: 10px;
-  background: #262424;
-}
-
-.current_consumption-circle-progress {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: conic-gradient(#f7d90f, 3.6deg, #262424 0deg);
+header .navigation__menu {
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease-in;
+  gap: 20px;
 }
 
-.current_consumption-circle-progress::before {
-  content: "";
-  position: absolute;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  background: #fff;
+header .navigation__menu li {
+  list-style: none;
 }
 
-.progress-value {
-  position: relative;
-  display: none;
-}
-
-.current_consumption_description {
-  width: 40%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.current_consumption_description h2 {
-  color: #262424;
-  font-size: 54px;
+header .navigation__menu li a {
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
   font-weight: 400;
+  line-height: normal;
 }
 
-.current_consumption-progress {
+header .navigation__menu li a:hover {
+  color: #f7d90f;
+}
+
+/* MAIN */
+
+main {
   width: 100%;
-  height: auto;
+}
+
+main .main__container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+main .main__container .container__score {
+  width: 100%;
+  height: 300px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
-.consumption-goal {
-  width: 50%;
+main .main__container .container__score .score {
+  width: 220px;
   height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }
 
-.consumption-goal h2,
-.consumption-goal span {
-  color: #262424;
+main .main__container .container__score .score figure {
+  width: 100px;
+  height: 100px;
+}
+
+main .main__container .container__score .score figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+main .main__container .container__score .score h2 {
+  color: #fff;
   text-align: center;
   font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+main .main__container .container__cards {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+main .main__container .container__cards .card {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  position: relative;
+  justify-content: center;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+}
+
+main .main__container .container__cards .card:hover {
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+main .main__container .container__cards .card h2 {
+  color: #000;
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+main .main__container .container__cards .card img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+main .main__container .container__cards .card p {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
   font-weight: 400;
+  line-height: normal;
 }
 
-.rest-goal {
-  color: #d20707;
+main .main__container .container__goal {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.consumption-progress {
+main .main__container .container__goal .goal__content {
   width: 50%;
   height: 100%;
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  gap: 75px;
+  justify-content: center;
+  align-items: center;
 }
 
-.consumption_progress-bar {
-  width: 611px;
+main .main__container .container__goal .goal__content span {
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+main .main__container .container__goal .goal__content .goal__description {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+main .main__container .container__goal .goal__content .goal__description h3 {
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+main .main__container .container__goal .goal__content .goal__description span {
+  color: #fff;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+main .main__container .container__goal .goal__progress {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+main .main__container .container__goal .goal__progress .progress__bar {
+  width: 90%;
   height: 41px;
   display: flex;
   position: relative;
@@ -149,267 +268,321 @@ main {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.indicator-progress-bar {
+main
+  .main__container
+  .container__goal
+  .goal__progress
+  .progress__bar
+  .progress-bar__indicator {
   width: 50%;
   height: 100%;
   border-radius: 20px;
   background: #07d227;
   transition: all 0.5s;
-  opacity: 0;
 }
 
-.consumption_indicators-items {
-  width: 100%;
+main .main__container .container__goal .goal__progress .progress-bar__status {
+  width: 90%;
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  gap: 36px;
+  gap: 10px;
   list-style: none;
 }
 
-.consumption_indicators-item {
+main
+  .main__container
+  .container__goal
+  .goal__progress
+  .progress-bar__status
+  li {
+  width: 100%;
+  list-style: none;
   display: flex;
   align-items: center;
   gap: 24px;
 }
 
-.indicator {
+main
+  .main__container
+  .container__goal
+  .goal__progress
+  .progress-bar__status
+  li
+  .indicator {
   width: 30px;
   height: 30px;
-  border-radius: 20px;
+  border-radius: 50%;
 }
 
-.indicator-good {
+main
+  .main__container
+  .container__goal
+  .goal__progress
+  .progress-bar__status
+  li
+  .green {
   background: #07d227;
 }
-.indicator-average {
+
+main
+  .main__container
+  .container__goal
+  .goal__progress
+  .progress-bar__status
+  li
+  .yellow {
   background: #f7d90f;
 }
-.indicator-attention {
+
+main
+  .main__container
+  .container__goal
+  .goal__progress
+  .progress-bar__status
+  li
+  .red {
   background: #d20707;
 }
 
-.consumption_cost-tips {
+main .main__container .container__diverse {
   width: 100%;
-  height: 525px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .main__container .container__diverse .content__fare {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main .main__container .container__diverse .content__fare .content {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
-.consumption-cost {
+main .main__container .container__diverse .content__fare .content p {
+  color: #262424;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+main .main__container .container__diverse .content__fare .content a {
+
+  color: #036;
+}
+
+main .main__container .container__diverse .content__fare .content a:hover {
+  color: rgb(12, 94, 175);
+}
+
+main .main__container .container__diverse .content__fare .content__tips {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+main .main__container .container__diverse .content__fare .content__tips .cards {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+main .main__container .container__diverse .content__tips {
   width: 50%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+main .main__container .container__diverse .content__tips .tips__card {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
   flex-direction: column;
-  gap: 30px;
-  text-align: center;
-}
-
-.consumption-cost h2 {
-  color: #262424;
-  text-align: center;
-  font-size: 24px;
-}
-
-.consumption-cost h1 {
-  color: #262424;
-  text-align: center;
-  font-size: 32px;
-  font-weight: 700;
-}
-
-.consumption-cost-information {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.cost-information {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  list-style: none;
-}
-
-.cost-information li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.cost-information li span {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cost-information li i {
-  font-size: 32px;
-}
-
-.consumption-tip {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.card-consumption-tip {
-  width: 400px;
-  min-height: 400px;
-  height: auto;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 30px;
   border-radius: 20px;
   background: #fff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   text-align: center;
+  gap: 15px;
 }
 
-.card-consumption-tip i {
-  color: #f7d90f;
-  font-size: 24px;
+main .main__container .container__diverse .content__tips .tips__card svg {
+  width: 24px;
 }
 
-.card-consumption-tip span {
+main .main__container .container__diverse .content__tips .tips__card h3 {
   color: #262424;
-  font-size: 18px;
+  font-size: 16px;
+  font-style: normal;
   font-weight: 700;
+  line-height: normal;
 }
 
-.card-consumption-tip p {
+main .main__container .container__diverse .content__tips .tips__card p {
   color: #262424;
   text-align: center;
-  font-size: 16px;
+  font-size: 12px;
+  font-style: normal;
   font-weight: 400;
+  line-height: normal;
 }
 
-/* Responsive */
+/* FOOTER */
 
-@media screen and (max-width: 1300px) {
-  .current_consumption_graphic {
-    flex-direction: column;
-  }
-  .current_consumption_indicator {
-    position: unset;
-    right: unset;
-    flex-direction: row;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  .current_consumption {
-    height: auto;
-  }
-  .consumption_progress-bar {
-    width: 90%;
+footer {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+footer h4 {
+  color: #fff;
+  font-family: "Poppins", "sans-serif";
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 1050px) {
+  main .main__container .container__cards .card {
+    padding: 10px;
+    width: 280px;
+    height: 280px;
   }
 }
 
 @media screen and (max-width: 999px) {
-  .current_consumption {
-    flex-direction: column;
-    padding: 20px;
+  header {
+    padding: 0 20px;
   }
-  .current_consumption_indicator {
-    order: 1;
-    width: 100%;
+  main .main__container {
+    padding: 0 20px;
   }
-  .current_consumption_graphic {
-    order: 2;
-    width: 100%;
+  header .navigation__menu-mobile {
+    display: flex;
   }
-  .current_consumption-circle-progress {
+  header .navigation__menu {
+    position: absolute;
+    top: 85px;
     width: 300px;
     height: 300px;
-  }
-  .current_consumption-circle-progress::before {
-    width: 150px;
-    height: 150px;
-  }
-  .current_consumption_description {
-    width: 100%;
-  }
-  .current_consumption_description h2 {
-    font-size: 32px;
-    text-align: center;
-  }
-  .current_consumption-progress {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     flex-direction: column;
-    gap: 60px;
-    padding: 10px;
-  }
-  .consumption-goal {
-    width: 100%;
-  }
-  .consumption-progress {
-    width: 100%;
     align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+    background-color: #fff;
+    z-index: 99;
+    transition: all 0.5s ease-in-out;
+    display:none;
+    right: 0;
   }
-  .consumption_indicators-items {
-    align-items: center;
+  header .navigation__menu.active {
+    transition: all 0.5s ease;
+    display: flex;
   }
-  .consumption_cost-tips {
+  main .main__container .container__goal {
     height: auto;
     flex-direction: column;
-    padding: 10px;
+    gap: 60px;
   }
-  .consumption-cost {
+  main .main__container .container__goal .goal__content {
     width: 100%;
   }
-  .consumption-tip {
+  main .main__container .container__goal .goal__progress {
     width: 100%;
+  }
+
+  main .main__container .container__diverse {
+    height: auto;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  main .main__container .container__diverse .content__fare {
+    width: 100%;
+  }
+
+  main .main__container .container__diverse .content__tips {
+    width: 100%;
+  }
+
+  main .main__container .container__diverse .content__tips .tips__card {
+    width: 50%;
+  }
+  main .main__container .container__cards{
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  main .main__container .container__cards{
+    flex-direction: column;
+    gap: 30px;
+  }
+  main .main__container .container__cards .card{
+    width: 70%;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  main .main__container .container__diverse .content__tips .tips__card{
+    width: 85%;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .current_consumption_indicator {
-    flex-direction: column;
+  main .main__container .container__score .score{
+    width: 100px;
   }
-  .cost-information {
-    flex-direction: column;
+}
+@media screen and (max-width: 430px) {
+  main .main__container .container__cards .card{
+    width: 100%;
   }
-  .card-consumption-tip {
-    width: 90%;
-    min-height: 400px;
-    height: auto;
+  main .main__container .container__diverse .content__tips .tips__card{
+    width: 100%;
+  }
+  main .main__container .container__diverse .content__fare .content__tips .cards{
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
-@media screen and (max-width: 370px) {
-  .current_consumption-circle-progress {
-    width: 250px;
-    height: 250px;
-  }
-  .current_consumption-circle-progress::before {
-    width: 120px;
-    height: 120px;
-  }
-  .current_consumption_description h2 {
-    font-size: 24px;
-  }
-  .current_consumption_indicator {
-    align-items: flex-start;
-  }
-  .current_consumption {
-    padding: 10px;
+@media screen and (max-width:380px){
+  main .main__container .container__score{
+    flex-direction: column;
+    height: auto;
+    gap: 30px;
   }
 }

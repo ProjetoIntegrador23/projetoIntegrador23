@@ -1,15 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
 body {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
+  background-image: linear-gradient(150deg, #052545 45%, #76b6ea 45%);
+  background-repeat: no-repeat;
 }
 
 /* HEADER */
@@ -45,6 +36,10 @@ header nav .navigation__logo figure {
   height: 50px;
 }
 
+header nav .navigation__logo figure:hover {
+  transform: scale(1.03);
+}
+
 header nav .navigation__logo figure img {
   width: 100%;
   height: 100%;
@@ -62,7 +57,7 @@ header nav .navigation__menu {
 
 header nav .navigation__menu button {
   width: 130px;
-  height: 25px;
+  height: 35px;
   border-radius: 5px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   border: none;
@@ -122,6 +117,9 @@ main .main__container {
   margin: 0 auto;
   max-width: 1440px;
   padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 main .main__container .container__content {
@@ -141,7 +139,7 @@ main .main__container .container__content .content__description {
 }
 
 main .main__container .container__content .content__description h2 {
-  color: #000;
+  color: #fff;
   font-family: "Poppins", "sans-serif";
   font-size: 48px;
   font-style: normal;
@@ -174,10 +172,11 @@ main .main__container .container__compontes {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 50px 0 10px 0;
 }
 
 main .main__container .container__compontes .componentes__items {
-  width: 90%;
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -187,6 +186,7 @@ main .main__container .container__compontes .componentes__items {
 main .main__container .container__compontes .componentes__items .item {
   width: 180px;
   height: 143px;
+  transition: all 0.3s linear;
   border-radius: 5px;
   background: #fff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -198,18 +198,16 @@ main .main__container .container__compontes .componentes__items .item {
   margin: 0 15px;
 }
 
+main .main__container .container__compontes .componentes__items .item:hover {
+  transform: scale(1.02);
+}
+
 main .main__container .container__compontes .componentes__items .item figure {
   width: 80px;
   height: 80px;
 }
 
-main
-  .main__container
-  .container__compontes
-  .componentes__items
-  .item
-  figure
-  img {
+main .main__container .container__compontes .componentes__items .item figure img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -223,6 +221,7 @@ main .main__container .container__compontes .componentes__items .item span {
   font-weight: 600;
   line-height: normal;
   text-align: center;
+  white-space: normal;
 }
 
 /* SLICK */
@@ -234,38 +233,13 @@ main .main__container .container__compontes .componentes__items .item span {
 }
 .slick-list {
   height: 100%;
-  
-}
-
-.slick-prev {
-    left: -50px;
-}
-
-.slick-prev::before{
-    opacity: 1 !important;
-    color: #F7D90F;
-   font-size: 32px;
-}
-
-.slick-next {
-    right: -50px;
-}
-
-.slick-next::before{
-    opacity: 1 !important;
-    color: #F7D90F;
-    font-size: 32px;
-}
-
-.slick-disabled::before{
-  color: #D20707;
 }
 
 /* FINAL SLICK */
 
 main .main__container .container__circuit {
   width: 100%;
-  height: 500px;
+  height: 450px;
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
@@ -294,24 +268,24 @@ main .main__container .container__circuit .circuit__figure {
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-main .main__container .container__circuit .circuit__figure figure{
+main .main__container .container__circuit .circuit__figure figure {
   width: 602px;
-height: 328px;
-border-radius: 5px;
+  height: 328px;
+  border-radius: 5px;
 }
 
-main .main__container .container__circuit .circuit__figure {
-  width: 50%;
+main .main__container .container__circuit .circuit__figure figure img {
+  width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
+  object-fit: contain;
 }
 
 /* FOOTER */
 
-footer{
+footer {
   width: 100%;
   height: 80px;
   display: flex;
@@ -321,8 +295,8 @@ footer{
   margin: 0 auto;
 }
 
-footer h4{
-  color: #C5BFBF;
+footer h4 {
+  color: #fff;
   font-family: "Poppins", "sans-serif";
   text-align: center;
   font-size: 16px;
@@ -332,3 +306,99 @@ footer h4{
 }
 
 /* RESPONSIVE */
+@media screen and (max-width: 1100px) {
+  main .main__container .container__content .content__figure figure img {
+    width: 95%;
+    height: 95%;
+  }
+  main .main__container .container__circuit {
+    gap: 20px;
+  }
+  main .main__container .container__circuit .circuit__figure figure {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  main .main__container .container__content {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  main .main__container .container__content .content__description {
+    width: 90%;
+    text-align: center;
+  }
+  main .main__container .container__content .content__description h2 {
+    font-size: 32px;
+  }
+  main .main__container .container__content .content__figure {
+    width: 90%;
+  }
+  main .main__container .container__circuit {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+  }
+  main .main__container .container__circuit .circuit__description {
+    width: 90%;
+    justify-content: center;
+    text-align: center;
+  }
+  main .main__container .container__circuit .circuit__figure {
+    width: 90%;
+    height: auto;
+  }
+  footer {
+    height: auto;
+    min-height: 80px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    padding: 0 20px;
+  }
+  main .main__container {
+    padding: 0 20px;
+    gap: unset;
+  }
+  main .main__container .container__content .content__description h2 {
+    font-size: 24px;
+  }
+  main .main__container .container__circuit .circuit__description h3 {
+    font-size: 18px;
+  }
+  footer {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  header nav .navigation__menu button {
+    width: 100px;
+  }
+  header nav .navigation__menu #btn-login a {
+    font-size: 12px;
+  }
+  header nav .navigation__menu #btn-register a {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  header nav .navigation__menu button {
+    width: 80px;
+  }
+  header nav .navigation__menu #btn-login a {
+    font-size: 10px;
+  }
+  header nav .navigation__menu #btn-register a {
+    font-size: 10px;
+  }
+}
