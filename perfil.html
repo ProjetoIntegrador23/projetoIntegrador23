@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu consumo de energia | Perfil</title>
+    <link rel="icon" href="./img/logo/logoPrincipal.png" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/perfil.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- JS -->
+    <script
+      src="https://kit.fontawesome.com/026675cdf7.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav class="header__navigation">
+        <div class="navigation__logo">
+          <figure>
+            <a href="./home.html">
+              <img
+                src="./img/logo/logoPrincipal.png"
+                alt="Logo do site - Um raio com amarela em torno de duas flexas, de cores azul forte e amarela, em forma de circulo"
+              />
+            </a>
+          </figure>
+        </div>
+        <div class="navigation__menu-mobile">
+          <div class="line-1"></div>
+          <div class="line-2"></div>
+          <div class="line-3"></div>
+        </div>
+        <ul class="navigation__menu">
+          <li class="menu__item"><a href="./home.html">Home</a></li>
+          <li class="menu__item">
+            <a href="./historic.html">Meu Histórico de Consumo</a>
+          </li>
+          <li class="menu__item"><a href="./perfil.html">Perfil</a></li>
+          <li class="menu__item">
+            <a href="#"><i class="fa-solid fa-right-from-bracket"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="main__container">
+        <div class="left">
+          <form class="form__left">
+            <div class="inputs-fields">
+              <div class="input-box">
+                <label for="userName">
+                  <span>Nome completo</span>
+                  <input type="text" name="userName" />
+                </label>
+              </div>
+              <div class="input-box">
+                <label for="userEmail">
+                  <span>E-mail</span>
+                  <input type="email" name="userEmail" />
+                </label>
+                <label for="userPassword">
+                  <span>Senha</span>
+                  <input type="password" name="userPassword" />
+                </label>
+              </div>
+              <div class="input-box">
+                <label for="nameRedeWifi">
+                  <span>Nome da rede Wifi</span>
+                  <input type="text" name="nameRedeWifi" />
+                </label>
+                <label for="passwordRedeWifii">
+                  <span>Senha da rede Wifi</span>
+                  <input type="password" name="passwordRedeWifi" />
+                </label>
+              </div>
+              <div class="input-box">
+                <label for="enderecoMacWifi">
+                  <span>Endereço MAC do módulo de Wifi / ESP32</span>
+                  <input type="text" name="enderecoMacWifi" />
+                </label>
+              </div>
+            </div>
+            <button class="btn-alter" type="submit">Alterar dados</button>
+          </form>
+        </div>
+     
+        <div class="right">
+          <form class="form__right">
+            <div class="inputs-fields">
+              <div class="input-box">
+                  <label for="metaCosnumo">
+                      <span>Defina uma meta de consumo de energia mensal</span>
+                      <select name="metaCosnumo" id="meta">
+                          <option value="nenhum">Selecione</option>
+                          <option value="volts">Volts</option>
+                          <option value="watts">Watts</option>
+                      </select>
+                  </label>
+              </div>
+            </div>  
+            <button class="btn-define" type="submit">DEFINIR</button>  
+            
+            <figure class="form__image">
+              <img src="./img/geral/database.png" alt="Imagem">
+            </figure> 
+               
+          </form>
+          <button class="btn-delete">Deletar conta</button> 
+        </div>
+      
+      </div>
+    </main>
+    <footer>
+      <h4>
+        Projeto Integrador | Aplicação Simulação de Medição e Controle de
+        Energia Residêncial
+      </h4>
+    </footer>
+  </body>
+</html>
+
+<script>
+  const header_navigation = document.querySelector('.navigation__menu')
+const button_header_navigation = document.querySelector('.navigation__menu-mobile')
+const button_header_line1 = button_header_navigation.querySelector(".line-1");
+const button_header_line2 = button_header_navigation.querySelector(".line-2");
+const button_header_line3 = button_header_navigation.querySelector(".line-3");
+
+button_header_navigation.addEventListener('click', () => {
+    header_navigation.classList.toggle('active');
+    if(header_navigation.classList.contains("active")){
+        button_header_line1.style.transform ="translateY(8px) rotate(45deg)";
+        button_header_line1.style.backgroundColor ="#f7d90f";
+        button_header_line2.style.opacity = "0";
+        button_header_line3.style.transform = "translateY(-8px) rotate(-45deg)";
+        button_header_line3.style.backgroundColor ="#f7d90f";
+    }else{
+        button_header_line1.style.transform ="unset";
+        button_header_line1.style.backgroundColor ="#fff";
+        button_header_line2.style.opacity = "1";
+        button_header_line3.style.transform = "unset";
+        button_header_line3.style.backgroundColor ="#fff";
+    }
+});
+
+</script>

@@ -1,54 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Integrador | Medidor de consumo de energia</title>
-    <link rel="icon" href="./img/logo/logoPrincipal.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu consumo de energia | Login</title>
+    <link rel="icon" href="./img/logo/logoPrincipal.png" />
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/login.css">
-    <link rel="stylesheet" href="./css/main.css"> 
+    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <!-- JS -->
     <script
-    src="https://kit.fontawesome.com/026675cdf7.js"
-    crossorigin="anonymous"
-  ></script>
-  <!-- <script>
-    const firebaseConfig = {
-  apiKey: "AIzaSyBOlATv13ZOA_pmmCwfh-iH2EvuI7-PDuM",
-  authDomain: "meuconsumodeenergiaweb.firebaseapp.com",
-  databaseURL: "https://meuconsumodeenergiaweb-default-rtdb.firebaseio.com",
-  projectId: "meuconsumodeenergiaweb",
-  storageBucket: "meuconsumodeenergiaweb.appspot.com",
-  messagingSenderId: "376629492849",
-  appId: "1:376629492849:web:984c2d29d8427a42d6afd0"
-};
-</script> -->
-</head>
-<body>
-    <main>
-        <div class="container">
-            <form active="#" method="post" class="container_form-loin">
-                <div class="form-login_logo">
-                    <figure>
-                        <img src="./img/logo/logoPrincipal.png" alt="Logo do site - Um raio com amarela em torno de duas flexas, de cores azul forte e amarela, em forma de circulo">
-                    </figure>
-                </div>
-                <div class="form-login-inputs">
-                    <label for="login-email">
-                        <input type="email" name="login-email" id="email-user" placeholder="Digite seu e-mail" required>
-                    </label>
-                    <label for="login-password">
-                        <input type="password" name="login-password" id="password-user" placeholder="Digite sua senha" required>
-                    </label>
-                    <span>Não tem um cadastro? <a href="./form-register.html">Cadastre-se agora!</a></span>
-                    <input type="submit" value="ENTRAR">
-                </div>
-            </form>
+      src="https://kit.fontawesome.com/026675cdf7.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav class="header__navigation">
+        <div class="navigation__logo">
+          <figure>
+            <a href="./index.html">
+              <img
+                src="./img/logo/logoPrincipal.png"
+                alt="Logo do site - Um raio com amarela em torno de duas flexas, de cores azul forte e amarela, em forma de circulo"
+              />
+            </a>
+          </figure>
         </div>
+        <div class="navigation__menu">
+          <button id="btn-register">
+            <a href="./register.html">Cadastrar-se</a>
+          </button>
+          <button id="btn-login"><a href="./login.html">Entrar</a></button>
+          <!-- <div class="menu__mode">
+            </div> -->
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="main__container">
+        <form active="#" method="post" class="container__login">
+            <h2>Login</h2>
+          <label for="login-email">
+            <input
+              type="email"
+              name="login-email"
+              id="email-user"
+              placeholder="Digite seu e-mail"
+            />
+          </label>
+          <label for="login-password">
+            <input
+              type="password"
+              name="login-password"
+              id="password-user"
+              placeholder="Digite sua senha"
+            />
+          </label>
+          <span
+            >Não tem um cadastro?
+            <a href="./form-register.html">Cadastre-se agora!</a></span
+          >
+          <input type="submit" value="ENTRAR" />
+        </form>
+      </div>
     </main>
     <footer>
-        <span>Projeto Integrador | Aplicação Simulação de Medição e Controle de Energia Residêncial - Direitos Reservados </span>
+      <h4
+        >Projeto Integrador | Aplicação Simulação de Medição e Controle de
+        Energia Residêncial
+    </h4>
     </footer>
-</body>
+  </body>
 </html>

@@ -1,244 +1,86 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projeto Integrador | Histórioc de Consumo</title>
+    <title>Meu consumo de energia | Home</title>
     <link rel="icon" href="./img/logo/logoPrincipal.png" />
     <!-- CSS -->
     <link rel="stylesheet" href="./css/historic.css" />
-    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <!-- JS -->
     <script
       src="https://kit.fontawesome.com/026675cdf7.js"
       crossorigin="anonymous"
     ></script>
-  </head> 
+    <!-- Google Font Link for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
   <body>
     <header>
-      <nav class="header_navigation">
-        <figure class="navigation_header-logo">
-          <a href="./home.html">
-            <img
-              src="./img/logo/logoPrincipal.png"
-              class="header-logo"
-              alt="Logo do site - Um raio com amarela em torno de duas flexas, de cores azul forte e amarela, em forma de circulo"
-            />
-          </a>
-        </figure>
-        <div class="navigation_menu-mobile">
+      <nav class="header__navigation">
+        <div class="navigation__logo">
+          <figure>
+            <a href="./home.html">
+              <img
+                src="./img/logo/logoPrincipal.png"
+                alt="Logo do site - Um raio com amarela em torno de duas flexas, de cores azul forte e amarela, em forma de circulo"
+              />
+            </a>
+          </figure>
+        </div>
+        <div class="navigation__menu-mobile">
           <div class="line-1"></div>
           <div class="line-2"></div>
           <div class="line-3"></div>
         </div>
-        <ul class="navigation_header-menu">
-          <li class="header-menu_item">
-            <a href="./home.html">Consumos e custos </a>
+        <ul class="navigation__menu">
+          <li class="menu__item"><a href="./home.html">Home</a></li>
+          <li class="menu__item">
+            <a href="./historic.html">Meu Histórico de Consumo</a>
           </li>
-          <li class="header-menu_item">
-            <a href="./form-alter.html">Metas de Consumo</a>
-          </li>
-          <li class="header-menu_item">
-            <a href="./historic.html">Histórico de Consumo de Energia</a>
+          <li class="menu__item"><a href="./perfil.html">Perfil</a></li>
+          <li class="menu__item">
+            <a href="#"><i class="fa-solid fa-right-from-bracket"></i></a>
           </li>
         </ul>
       </nav>
     </header>
     <main>
-      <div class="container">
-        <div class="container_title">
-          <h1>Histórico de Consumo de Energia do ano de 2023</h1>
+      <div class="wrapper">
+        <div class="header">
+          <p class="current-date"></p>
+          <div class="icons">
+            <span id="prev" class="material-symbols-rounded">chevron_left</span>
+            <span id="next" class="material-symbols-rounded"
+              >chevron_right</span
+            >
+          </div>
         </div>
-        <div class="container_historic-register">
-          <div class="card-month">
-            <div class="month">
-              <h2>Janeiro</h2>
-            </div>
-            <div class="consumption">
-              <span>Consumo de energia do mês: 184 (KWh)</span>
-            </div>
-            <div class="cost">
-              <span>Custo estimado: R$ 54,59</span>
-            </div>
-            <div class="established-goal">
-              <div class="indicator-goal"></div>
-              <span>Você esteve dentro da sua meta de consumo!</span>
-            </div>
-          </div>
-          <div class="card-month">
-            <div class="month">
-              <h2>Janeiro</h2>
-            </div>
-            <div class="consumption">
-              <span>Consumo de energia do mês: 184 (KWh)</span>
-            </div>
-            <div class="cost">
-              <span>Custo estimado: R$ 54,59</span>
-            </div>
-            <div class="established-goal">
-              <div class="indicator-goal"></div>
-              <span>Você esteve dentro da sua meta de consumo!</span>
-            </div>
-          </div>
-          <div class="card-month">
-            <div class="month">
-              <h2>Janeiro</h2>
-            </div>
-            <div class="consumption">
-              <span>Consumo de energia do mês: 184 (KWh)</span>
-            </div>
-            <div class="cost">
-              <span>Custo estimado: R$ 54,59</span>
-            </div>
-            <div class="established-goal">
-              <div class="indicator-goal"></div>
-              <span>Você esteve dentro da sua meta de consumo!</span>
-            </div>
-          </div>
-          <div class="card-month">
-            <div class="month">
-              <h2>Janeiro</h2>
-            </div>
-            <div class="consumption">
-              <span>Consumo de energia do mês: 184 (KWh)</span>
-            </div>
-            <div class="cost">
-              <span>Custo estimado: R$ 54,59</span>
-            </div>
-            <div class="established-goal">
-              <div class="indicator-goal"></div>
-              <span>Você esteve dentro da sua meta de consumo!</span>
-            </div>
-          </div>
-          <div class="card-month">
-            <div class="month">
-              <h2>Janeiro</h2>
-            </div>
-            <div class="consumption">
-              <span>Consumo de energia do mês: 184 (KWh)</span>
-            </div>
-            <div class="cost">
-              <span>Custo estimado: R$ 54,59</span>
-            </div>
-            <div class="established-goal">
-              <div class="indicator-goal"></div>
-              <span>Você esteve dentro da sua meta de consumo!</span>
-            </div>
-          </div>
-          <div class="card-month">
-            <div class="month">
-              <h2>Janeiro</h2>
-            </div>
-            <div class="consumption">
-              <span>Consumo de energia do mês: 184 (KWh)</span>
-            </div>
-            <div class="cost">
-              <span>Custo estimado: R$ 54,59</span>
-            </div>
-            <div class="established-goal">
-              <div class="indicator-goal"></div>
-              <span>Você esteve dentro da sua meta de consumo!</span>
-            </div>
-          </div>
-          <div class="card-month">
-            <div class="month">
-              <h2>Janeiro</h2>
-            </div>
-            <div class="consumption">
-              <span>Consumo de energia do mês: 184 (KWh)</span>
-            </div>
-            <div class="cost">
-              <span>Custo estimado: R$ 54,59</span>
-            </div>
-            <div class="established-goal">
-              <div class="indicator-goal"></div>
-              <span>Você esteve dentro da sua meta de consumo!</span>
-            </div>
-          </div>
-          <div class="card-month">
-            <div class="month">
-              <h2>Janeiro</h2>
-            </div>
-            <div class="consumption">
-              <span>Consumo de energia do mês: 184 (KWh)</span>
-            </div>
-            <div class="cost">
-              <span>Custo estimado: R$ 54,59</span>
-            </div>
-            <div class="established-goal">
-              <div class="indicator-goal"></div>
-              <span>Você esteve dentro da sua meta de consumo!</span>
-            </div>
-          </div>
-          <div class="card-month">
-            <div class="month">
-              <h2>Janeiro</h2>
-            </div>
-            <div class="consumption">
-              <span>Consumo de energia do mês: 184 (KWh)</span>
-            </div>
-            <div class="cost">
-              <span>Custo estimado: R$ 54,59</span>
-            </div>
-            <div class="established-goal">
-              <div class="indicator-goal"></div>
-              <span>Você esteve dentro da sua meta de consumo!</span>
-            </div>
-          </div>
-          <div class="card-month">
-            <div class="month">
-              <h2>Janeiro</h2>
-            </div>
-            <div class="consumption">
-              <span>Consumo de energia do mês: 184 (KWh)</span>
-            </div>
-            <div class="cost">
-              <span>Custo estimado: R$ 54,59</span>
-            </div>
-            <div class="established-goal">
-              <div class="indicator-goal"></div>
-              <span>Você esteve dentro da sua meta de consumo!</span>
-            </div>
-          </div>
-          <div class="card-month">
-            <div class="month">
-              <h2>Janeiro</h2>
-            </div>
-            <div class="consumption">
-              <span>Consumo de energia do mês: 184 (KWh)</span>
-            </div>
-            <div class="cost">
-              <span>Custo estimado: R$ 54,59</span>
-            </div>
-            <div class="established-goal">
-              <div class="indicator-goal"></div>
-              <span>Você esteve dentro da sua meta de consumo!</span>
-            </div>
-          </div>
-          <div class="card-month">
-            <div class="month">
-              <h2>Janeiro</h2>
-            </div>
-            <div class="consumption">
-              <span>Consumo de energia do mês: 184 (KWh)</span>
-            </div>
-            <div class="cost">
-              <span>Custo estimado: R$ 54,59</span>
-            </div>
-            <div class="established-goal">
-              <div class="indicator-goal"></div>
-              <span>Você esteve dentro da sua meta de consumo!</span>
-            </div>
-          </div>
+        <div class="calendar">
+          <ul class="weeks">
+            <li>Seg</li>
+            <li>Ter</li>
+            <li>Qua</li>
+            <li>Qui</li>
+            <li>Sex</li>
+            <li>Sáb</li>
+            <li>Dom</li>
+          </ul>
+          <ul class="days"></ul>
         </div>
       </div>
     </main>
     <footer>
-      <span>
+      <h4>
         Projeto Integrador | Aplicação Simulação de Medição e Controle de
-        Energia Residêncial - Direitos Reservados
-      </span>
+        Energia Residêncial
+      </h4>
     </footer>
-    <script src="./js/main.js"></script>
+    <script src="./js/calendario.js" ></script>
+    <script src="./js/main.js" ></script>
   </body>
 </html>

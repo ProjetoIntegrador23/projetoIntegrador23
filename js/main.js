@@ -1,5 +1,5 @@
-const header_navigation = document.querySelector('.navigation_header-menu')
-const button_header_navigation = document.querySelector('.navigation_menu-mobile')
+const header_navigation = document.querySelector('.navigation__menu')
+const button_header_navigation = document.querySelector('.navigation__menu-mobile')
 const button_header_line1 = button_header_navigation.querySelector(".line-1");
 const button_header_line2 = button_header_navigation.querySelector(".line-2");
 const button_header_line3 = button_header_navigation.querySelector(".line-3");
@@ -14,9 +14,9 @@ button_header_navigation.addEventListener('click', () => {
         button_header_line3.style.backgroundColor ="#f7d90f";
     }else{
         button_header_line1.style.transform ="unset";
-        button_header_line1.style.backgroundColor ="#000";
+        button_header_line1.style.backgroundColor ="#fff";
         button_header_line2.style.opacity = "1";
         button_header_line3.style.transform = "unset";
-        button_header_line3.style.backgroundColor ="#000";
+        button_header_line3.style.backgroundColor ="#fff";
     }
 });

@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projeto Integrador | Home</title>
+    <title>Meu consumo de energia | Home</title>
     <link rel="icon" href="./img/logo/logoPrincipal.png" />
     <!-- CSS -->
     <link rel="stylesheet" href="./css/home.css" />
-    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <!-- JS -->
     <script
       src="https://kit.fontawesome.com/026675cdf7.js"
@@ -16,119 +16,203 @@
   </head>
   <body>
     <header>
-      <nav class="header_navigation">
-        <figure class="navigation_header-logo">
-          <a href="./home.html">
-            <img
-              src="./img/logo/logoPrincipal.png"
-              class="header-logo"
-              alt="Logo do site - Um raio com amarela em torno de duas flexas, de cores azul forte e amarela, em forma de circulo"
-            />
-          </a>
-        </figure>
-        <div class="navigation_menu-mobile">
+      <nav class="header__navigation">
+        <div class="navigation__logo">
+          <figure>
+            <a href="./home.html">
+              <img
+                src="./img/logo/logoPrincipal.png"
+                alt="Logo do site - Um raio com amarela em torno de duas flexas, de cores azul forte e amarela, em forma de circulo"
+              />
+            </a>
+          </figure>
+        </div>
+        <div class="navigation__menu-mobile">
           <div class="line-1"></div>
           <div class="line-2"></div>
           <div class="line-3"></div>
         </div>
-        <ul class="navigation_header-menu">
-          <li class="header-menu_item">
-            <a href="./home.html">Consumos e custos </a>
+        <ul class="navigation__menu">
+          <li class="menu__item"><a href="./home.html">Home</a></li>
+          <li class="menu__item">
+            <a href="./historic.html">Meu Histórico de Consumo</a>
           </li>
-          <li class="header-menu_item">
-            <a href="./form-alter.html">Metas de Consumo</a>
-          </li>
-          <li class="header-menu_item">
-            <a href="./historic.html">Histórico de Consumo de Energia</a>
+          <li class="menu__item"><a href="./perfil.html">Perfil</a></li>
+          <li class="menu__item">
+            <a href="#"><i class="fa-solid fa-right-from-bracket"></i></a>
           </li>
         </ul>
       </nav>
     </header>
     <main>
-      <div class="container">
-        <section class="current_consumption">
-          <div class="current_consumption_graphic">
-            <div class="current_consumption-circle-progress">
-              <span class="progress-value">0%</span>
-            </div>
-            <div class="current_consumption_indicator">
-              <div class="indicator-colors">
-                <div class="indicator-color"></div>
-                <span>Consumo atual</span>
-              </div>
-              <div class="indicator-colors">
-                <div class="total-color"></div>
-                <span>Consumo médio por residência</span>
-              </div>
-            </div>
+      <div class="main__container">
+        <div class="container__score">
+          <div class="score volts">
+            <figure>
+              <img
+                src="./img/geral/led-azul.png"
+                alt="Imagem de uma led na cor azul forte."
+              />
+            </figure>
+            <h2>50 Volts (V)</h2>
           </div>
-          <div class="current_consumption_description">
-            <h2 class="consumption-information">
-              Atualmente, você está consumindo:
-            </h2>
-            <h2>100 KWh <i class="fa-solid fa-bolt"></i></h2>
+          <div class="score ampere">
+            <figure>
+              <img
+                src="./img/geral/led-vermelho.png"
+                alt="Imagem de uma led na cor vermelha."
+              />
+            </figure>
+            <h2>50 Amperes (A)</h2>
           </div>
-        </section>
-        <section class="current_consumption-progress">
-          <div class="consumption-goal">
-            <h2>Sua meta de consumo mensal de energia é de:</h2>
-            <h2 class="goal">165(KWh)</h2>
-            <span
-              >Você tem ainda: <b class="rest-goal">65KWh</b> para consumir
-            </span>
+          <div class="score watts">
+            <figure>
+              <img
+                src="./img/geral/led-verde.png"
+                alt="Imagem de uma led na cor verde."
+              />
+            </figure>
+            <h2>50 Watts (W)</h2>
           </div>
-          <div class="consumption-progress">
-            <div class="consumption_progress-bar">
-              <div class="indicator-progress-bar" data-progress="40"></div>
+        </div>
+        <!-- <div class="container__time">
+          <span>Atualizações a cada X tempo</span>
+        </div> -->
+        <div class="container__cards">
+          <div class="card">
+            <h2>Volts</h2>
+            <img
+              src="./img/geral/led-azul.png"
+              alt="Imagem de uma led na cor azul forte."
+            />
+            <p>
+              Mede a tensão elétrica ou a diferença de potencial entre dois
+              pontos em um circuito elétrico. É a força que impulsiona a
+              corrente elétrica.
+            </p>
+          </div>
+          <div class="card">
+            <h2>Ampares</h2>
+            <img
+              src="./img/geral/led-vermelho.png"
+              alt="Imagem de uma led na cor azul forte."
+            />
+            <p>
+              Mede a intensidade da corrente elétrica, ou seja, a quantidade de
+              elétrons fluindo em um circuito em um determinado período de
+              tempo.
+            </p>
+          </div>
+          <div class="card">
+            <h2>Watts</h2>
+            <img
+              src="./img/geral/led-verde.png"
+              alt="Imagem de uma led na cor azul forte."
+            />
+            <p>
+              Mede a potência, que é a taxa na qual a energia é transferida ou
+              usada em um circuito elétrico. É o resultado da tensão
+              multiplicada pela corrente (P = V x I).
+            </p>
+          </div>
+        </div>
+        <div class="container__goal">
+          <div class="goal__content">
+            <div class="goal__description">
+              <h3>Sua meta estabelecida é de:</h3>
+              <span>50 watts</span>
             </div>
-            <ul class="consumption_indicators-items">
-              <li class="consumption_indicators-item">
-                <div class="indicator indicator-good"></div>
-                <span>
-                  Até o momento, você está dentro da sua meta de consumo !
+            <span>Você tem ainda: 10 watts para atingir a meta.</span>
+          </div>
+          <div class="goal__progress">
+            <div class="progress__bar">
+              <div class="progress-bar__indicator"></div>
+            </div>
+            <ul class="progress-bar__status">
+              <li>
+                <div class="indicator green"></div>
+                <span
+                  >Até o momento, você está dentro da sua meta de consumo !
                 </span>
               </li>
-              <li class="consumption_indicators-item">
-                <div class="indicator indicator-average"></div>
+              <li>
+                <div class="indicator yellow"></div>
                 <span>O seu consumo de energia está alcançando sua meta!</span>
               </li>
-              <li class="consumption_indicators-item">
-                <div class="indicator indicator-attention"></div>
+              <li>
+                <div class="indicator red"></div>
                 <span
                   >Você consumiu mais energia do que a meta estabelecida!</span
                 >
               </li>
             </ul>
           </div>
-        </section>
-        <section class="consumption_cost-tips">
-          <div class="consumption-cost">
-            <h2>O custo estimado para seu consumo atual de energia é de:</h2>
-            <h1>R$ 24,00</h1>
-            <div class="consumption-cost-information">
+        </div>
+        <div class="container__diverse">
+          <div class="content__fare">
+            <div class="content">
+              <p>
+                Você sabia que é possivel fazer a autoleitura do seu consumo de
+                energia? Assim, você evita ter que pagar o faturamento por
+                média. Consulte o site da
+                <a href="https://www.cpfl.com.br/autoleitura">CPFL</a> para
+                saber mais.
+              </p>
+            </div>
+            <div class="content__tips">
               <span
                 >A partir dos dados da CPFL, o valor a ser cobrado por KWH
                 são:</span
               >
-              <ul class="cost-information">
-                <li class="information-item">
-                  <i class="fa-solid fa-house"></i>
-                  <span>R$ 0,89 por KWh para a tarifa residencial (B1)</span>
-                </li>
-                <li class="information-item">
-                  <i class="fa-solid fa-business-time"></i>
-                  <span
-                    >R$ 0,85 por KWh para tarifa comercial/industrial
-                    (B3).</span
+              <div class="cards">
+                <div class="card">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="50"
+                    height="39"
+                    viewBox="0 0 50 39"
+                    fill="none"
                   >
-                </li>
-              </ul>
+                    <path
+                      d="M24.339 9.98989L8.33464 23.0435V37.1322C8.33464 37.497 8.48097 37.8468 8.74144 38.1048C9.00191 38.3627 9.35518 38.5076 9.72353 38.5076L19.451 38.4827C19.8181 38.4809 20.1696 38.3352 20.4286 38.0774C20.6875 37.8197 20.8329 37.4709 20.8329 37.1073V28.8796C20.8329 28.5149 20.9792 28.165 21.2397 27.9071C21.5002 27.6491 21.8535 27.5042 22.2218 27.5042H27.7774C28.1457 27.5042 28.499 27.6491 28.7595 27.9071C29.0199 28.165 29.1663 28.5149 29.1663 28.8796V37.1012C29.1657 37.2822 29.2012 37.4615 29.2707 37.6289C29.3403 37.7963 29.4425 37.9484 29.5715 38.0766C29.7006 38.2048 29.8539 38.3065 30.0226 38.3759C30.1914 38.4453 30.3724 38.481 30.5552 38.481L40.2791 38.5076C40.6475 38.5076 41.0007 38.3627 41.2612 38.1048C41.5217 37.8468 41.668 37.497 41.668 37.1322V23.0341L25.6671 9.98989C25.479 9.83973 25.2447 9.75785 25.0031 9.75785C24.7614 9.75785 24.5271 9.83973 24.339 9.98989ZM49.6194 18.8622L42.3625 12.9385V1.03157C42.3625 0.75798 42.2527 0.495597 42.0574 0.30214C41.862 0.108683 41.5971 0 41.3208 0H36.4597C36.1834 0 35.9185 0.108683 35.7231 0.30214C35.5278 0.495597 35.418 0.75798 35.418 1.03157V7.27342L27.6463 0.941307C26.9005 0.333523 25.9646 0.00121497 24.9987 0.00121497C24.0328 0.00121497 23.097 0.333523 22.3512 0.941307L0.378037 18.8622C0.272558 18.9486 0.18529 19.0547 0.121221 19.1744C0.057151 19.2941 0.0175354 19.4252 0.00463729 19.5601C-0.00826082 19.6951 0.00581134 19.8312 0.0460497 19.9607C0.0862881 20.0902 0.151904 20.2106 0.239148 20.315L2.45269 22.9799C2.5397 23.0847 2.64672 23.1714 2.76762 23.2352C2.88853 23.299 3.02094 23.3385 3.15729 23.3515C3.29363 23.3645 3.43123 23.3508 3.56221 23.3111C3.69318 23.2713 3.81496 23.2064 3.92058 23.12L24.339 6.46536C24.5271 6.3152 24.7614 6.23332 25.0031 6.23332C25.2447 6.23332 25.479 6.3152 25.6671 6.46536L46.0864 23.12C46.1919 23.2064 46.3134 23.2714 46.4442 23.3113C46.575 23.3511 46.7125 23.3651 46.8487 23.3523C46.9849 23.3395 47.1173 23.3003 47.2382 23.2368C47.3591 23.1734 47.4663 23.087 47.5534 22.9825L49.767 20.3176C49.8541 20.2126 49.9195 20.0916 49.9592 19.9615C49.999 19.8314 50.0124 19.6948 49.9987 19.5595C49.985 19.4243 49.9444 19.2931 49.8793 19.1734C49.8142 19.0537 49.7259 18.948 49.6194 18.8622Z"
+                      fill="#262424"
+                    />
+                  </svg>
+                  <p>R$ 0,89 por KWh para a tarifa residencial (B1)</p>
+                </div>
+                <div class="card">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="50"
+                    height="44"
+                    viewBox="0 0 50 44"
+                    fill="none"
+                  >
+                    <path
+                      d="M38.75 18.953C32.532 18.953 27.5 24.4028 27.5 31.137C27.5 37.8712 32.532 43.3211 38.75 43.3211C44.968 43.3211 50 37.8712 50 31.137C50 24.4028 44.968 18.953 38.75 18.953ZM43.75 31.6692C43.75 32.1211 43.4086 32.4908 42.9914 32.4908H38.2594C37.8422 32.4908 37.5008 32.1211 37.5008 31.6692V25.1905C37.5008 24.7387 37.8422 24.3689 38.2594 24.3689H39.2414C39.6586 24.3689 40 24.7387 40 25.1905V29.7832H42.9914C43.4086 29.7832 43.75 30.153 43.75 30.6048V31.6692ZM38.75 16.2454C39.1719 16.2454 39.5875 16.2733 40 16.3139V12.1841C40 10.018 38.25 8.1227 36.25 8.1227H30V4.06135C30 1.8953 28.25 0 26.25 0H13.75C11.75 0 10 1.8953 10 4.06135V8.1227H3.75C1.75 8.1227 0 10.018 0 12.1841V18.953H30.8687C33.1031 17.2531 35.818 16.2454 38.75 16.2454ZM25 8.1227H15V5.41513H25V8.1227ZM25.5328 27.0757H16.25C15.5594 27.0757 15 26.4699 15 25.7219V21.6605H0V33.8446C0 36.0106 1.75 37.9059 3.75 37.9059H26.518C25.5547 35.8719 25 33.5755 25 31.137C25 29.7274 25.1938 28.3685 25.5328 27.0757Z"
+                      fill="#262424"
+                    />
+                  </svg>
+                  <p>R$ 0,85 por KWh para tarifa comercial/industrial (B3).</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="consumption-tip">
-            <div class="card-consumption-tip">
-              <i class="fa-solid fa-lightbulb"></i>
-              <span class="title-tip"> Dica de ecnomia de energia </span>
+          <div class="content__tips">
+            <div class="tips__card">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="55"
+                viewBox="0 0 40 55"
+                fill="none"
+              >
+                <path
+                  d="M10.9159 48.8062C10.917 49.4819 11.1284 50.1436 11.525 50.7064L13.467 53.466C13.7988 53.9378 14.2488 54.3247 14.7769 54.5923C15.3051 54.8599 15.8951 55 16.4943 55H23.5068C24.1061 55 24.696 54.8599 25.2242 54.5923C25.7524 54.3247 26.2023 53.9378 26.5341 53.466L28.4761 50.7064C28.8726 50.1435 29.0844 49.4825 29.0852 48.8062L29.0898 44.6866H10.9102L10.9159 48.8062ZM0 18.9059C0 23.6721 1.86932 28.0205 4.95 31.343C6.82727 33.3678 9.76364 37.598 10.883 41.1665C10.8875 41.1944 10.8909 41.2224 10.8955 41.2503H29.1045C29.1091 41.2224 29.1125 41.1955 29.117 41.1665C30.2364 37.598 33.1727 33.3678 35.05 31.343C38.1307 28.0205 40 23.6721 40 18.9059C40 8.44435 31.0125 -0.0321343 19.9375 9.15836e-05C8.34545 0.0333917 0 8.9127 0 18.9059ZM20 10.3124C14.9875 10.3124 10.9091 14.1677 10.9091 18.9059C10.9091 19.8555 10.0955 20.6247 9.09091 20.6247C8.08636 20.6247 7.27273 19.8555 7.27273 18.9059C7.27273 12.2717 12.9818 6.87495 20 6.87495C21.0045 6.87495 21.8182 7.64407 21.8182 8.59366C21.8182 9.54325 21.0045 10.3124 20 10.3124Z"
+                  fill="#F7D90F"
+                />
+              </svg>
+              <h3>Dica de ecnomia de energia</h3>
               <p>
                 Aproveite a Luz Natural e Ventilação: Abra cortinas e persianas
                 durante o dia para aproveitar a luz natural. Use ventiladores de
@@ -138,16 +222,15 @@
               </p>
             </div>
           </div>
-        </section>
+        </div>
       </div>
     </main>
     <footer>
-      <span
-        >Projeto Integrador | Aplicação Simulação de Medição e Controle de
-        Energia Residêncial - Direitos Reservados
-      </span>
+      <h4>
+        Projeto Integrador | Aplicação Simulação de Medição e Controle de
+        Energia Residêncial
+      </h4>
     </footer>
-    <script src="./js/graphics.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>

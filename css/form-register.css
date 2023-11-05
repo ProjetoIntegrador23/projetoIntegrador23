@@ -1,287 +1,354 @@
-body {
+body{
+    background-color: #76B6EA;
+}
+/* HEADER */
+header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0 40px;
+}
+
+header nav {
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
+header nav .navigation__logo {
+    width: 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+header nav .navigation__logo figure {
+    width: 50px;
+    height: 50px;
+}
+
+header nav .navigation__logo figure:hover {
+    transform: scale(1.03);
+}
+
+header nav .navigation__logo figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+header nav .navigation__menu {
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+header nav .navigation__menu button {
+    width: 130px;
+    height: 35px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+}
+
+header nav .navigation__menu #btn-register {
+    background: #036;
+}
+
+header nav .navigation__menu #btn-register:hover {
+    background: rgb(12, 94, 175);
+    transform: scale(1.01);
+}
+
+header nav .navigation__menu #btn-register a {
+    color: #fff;
+    font-family: "Poppins", "sans-serif";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+}
+
+header nav .navigation__menu #btn-login {
+    background: #f7d90f;
+}
+
+header nav .navigation__menu #btn-login:hover {
+    background: #ffeb6a;
+    transform: scale(1.01);
+}
+
+header nav .navigation__menu #btn-login a {
+    color: #262424;
+    text-align: center;
+    font-family: "Poppins", "sans-serif";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+}
+
+header nav .navigation__menu .menu__mode {
+    display: none;
+}
+
+/* MAIN */
 
 main {
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 10px 0;
 }
 
-.container {
-    width: 90%;
-    height: 90%;
-    max-width: 1440px;
+main .main__container {
+    width: 100%;
     margin: 0 auto;
-    padding: 25px 35px;
-    border-radius: 10px;
-    background: #fff;
+    max-width: 1440px;
+    padding: 0 40px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     gap: 20px;
-}
-
-.container-logo {
-    width: 100%;
-    height: 100px;
-    display: flex;
+    min-height: 500px;
     align-items: center;
-    justify-content: center;
 }
 
-.container-logo {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-}
-
-.content_register {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.content_inputs {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-}
-
-.inputs_left {
+main .main__container .container__formulario {
     width: 50%;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 10px;
 }
 
-.input_field {
+main .main__container .container__formulario form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+main .main__container .container__formulario form .input-fields {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+main .main__container .container__formulario form .input-fields .input-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 23px;
+}
+
+main .main__container .container__formulario form .input-fields .input-box label {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
-.input_field p {
+main .main__container .container__formulario form .input-fields .input-box label span {
     color: #262424;
     font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.input_field input {
-    width: 350px;
+main .main__container .container__formulario form .input-fields .input-box label span i {
+    color: #d20707;
+}
+main .main__container .container__formulario form .input-fields .input-box label span i:hover {
+    color: #f02929;
+}
+
+main .main__container .container__formulario form .input-fields .input-box label input {
+    width: 300px;
     height: 45px;
-    border: none;
-    outline: none;
-    border-radius: 10px;
+    border-radius: 5px;
     background: #fff;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-.input_local,
-.additional_fields {
-    display: flex;
-    gap: 35px;
-    align-items: center;
-}
-
-.input_local input,
-.additional_fields input {
-    width: 200px;
-}
-
-.inputs_right {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-}
-
-.hours,
-.kwm {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-.hours input,
-.kwm input {
-    width: 200px;
-}
-
-.description_content {
-    margin: 10px 0;
-}
-
-.description_content p {
-    color: #262424;
-    font-size: 16px;
-}
-
-.buttonNext {
-    width: 100%;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.buttonNext button {
-    width: 350px;
-    height: 50px;
     border: none;
     outline: none;
-    border-radius: 10px;
-    border-radius: 10px;
-    background: #036;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 5px 10px;
+    color: #262424;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
-.buttonNext button:hover {
-    background: rgb(2, 61, 120);
-}
-
-.contentConnection {
-    width: 100%;
-    height: 100%;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.inputsConnection {
-    gap: 40px;
-}
-
-.field_right {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-}
-
-.follow_buttons {
-    width: 100%;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.buttonPrevious,
-.buttonRegister {
+main .main__container .container__formulario form .btn-register {
     width: 300px;
     height: 50px;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    outline: none;
-    border-radius: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     background: #036;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #fff;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    border: none;
 }
 
-.buttonPrevious:hover,
-.buttonRegister:hover {
-    background: rgb(2, 61, 120);
+main .main__container .container__formulario form .btn-register:hover {
+    background: rgb(12, 94, 175);
+    transform: scale(1.01);
 }
 
-/* Responsive */
+main .main__container .container__description {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .main__container .container__description .description__content {
+    width: 90%;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+main .main__container .container__description .description__content p {
+    color: #262424;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+footer h4 {
+    color: #262424;
+    font-family: "Poppins", "sans-serif";
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 1380px) {
+    main .main__container .container__formulario form .input-fields .input-box label input {
+        max-width: 300px;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    main .main__container .container__formulario form .input-fields .input-box label input {
+        max-width: 200px;
+    }
+}
+
 @media screen and (max-width: 999px) {
-    main {
-        height: auto;
-        min-height: 100%;
-    }
-    .container {
-        height: auto;
-    }
-
-    .content_inputs {
+    main .main__container {
         flex-direction: column;
     }
-    .inputs_left {
-        width: 100%;
+    main .main__container .container__formulario {
+        width: 90%;
+        text-align: center;
     }
-    .inputs_right {
-        width: 100%;
-    }
-
-    .contentInputsConnection {
-        flex-direction: column;
-    }
-    .inputsConnection {
-        width: 100%;
+    main .main__container .container__formulario form {
         align-items: center;
     }
-    .field_right {
+    main .main__container .container__formulario form .input-fields .input-box label input {
+        max-width: 300px;
+        width: auto;
+    }
+    main .main__container .container__formulario form .input-fields .input-box label input {
+        max-width: 300px;
+        width: auto;
+    }
+    main .main__container .container__description {
+        width: 90%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    main .main__container .container__formulario form .input-fields .input-box {
+        flex-wrap: wrap;
+    }
+    main .main__container .container__formulario form .input-fields .input-box label {
+        align-items: center;
+    }
+    main .main__container .container__formulario form .input-fields .input-box label input {
+        max-width: 100%;
         width: 100%;
     }
+    main .main__container .container__formulario form .btn-register {
+        width: 90%;
+    }
+    header {
+        padding: 0 20px;
+    }
+    main .main__container {
+        padding: 0 20px;
+    }
+    footer {
+        padding: 0 20px;
+    }
 }
 
-@media screen and (max-width: 650px) {
-    .container {
-        box-shadow: none;
-        padding: 10px;
-    }
-    main {
-        height: auto;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .input_local {
-        flex-direction: column;
-        align-items: unset;
-    }
-    .additional_fields {
-        flex-direction: column;
-        align-items: unset;
-    }
-    .follow_buttons {
-        height: auto;
-        flex-direction: column;
-        justify-content: center;
-    }
-}
 @media screen and (max-width: 400px) {
-    .input_field input {
-        width: 300px;
+    header nav .navigation__menu button {
+        width: 100px;
+    }
+    header nav .navigation__menu #btn-login a {
+        font-size: 12px;
+    }
+    header nav .navigation__menu #btn-register a {
+        font-size: 12px;
     }
 }
 
-@media screen and (max-width: 350px) {
-    .input_field input {
-        width: 250px;
+@media screen and (max-width: 320px) {
+    header nav .navigation__menu button {
+        width: 80px;
     }
-    .follow_buttons button {
-        width: 250px;
+    header nav .navigation__menu #btn-login a {
+        font-size: 10px;
+    }
+    header nav .navigation__menu #btn-register a {
+        font-size: 10px;
     }
 }
