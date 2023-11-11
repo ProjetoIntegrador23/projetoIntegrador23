@@ -39,7 +39,7 @@
           </li>
           <li class="menu__item"><a href="./perfil.html">Perfil</a></li>
           <li class="menu__item">
-            <a href="#"><i class="fa-solid fa-right-from-bracket"></i></a>
+            <a href="./index.html" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i></a>
           </li>
         </ul>
       </nav>
@@ -47,43 +47,46 @@
     <main>
       <div class="main__container">
         <div class="container__score">
-          <div class="score volts">
-            <figure>
-              <img
-                src="./img/geral/led-azul.png"
-                alt="Imagem de uma led na cor azul forte."
-              />
-            </figure>
-            <h2>50 Volts (V)</h2>
+          <div class="container__name">
+            <h1 id="nameUserLogged">TESTE</h1>
           </div>
-          <div class="score ampere">
-            <figure>
-              <img
-                src="./img/geral/led-vermelho.png"
-                alt="Imagem de uma led na cor vermelha."
-              />
-            </figure>
-            <h2>50 Amperes (A)</h2>
+          <div class="scores">
+            <div class="score volts">
+              <figure>
+                <img
+                  src="./img/geral/led-amarela.png"
+                  alt="Imagem de uma led na cor amarelo."
+                />
+              </figure>
+              <h2>50 Volts (V)</h2>
+            </div>
+            <div class="score ampere">
+              <figure>
+                <img
+                  src="./img/geral/led-vermelho.png"
+                  alt="Imagem de uma led na cor vermelha."
+                />
+              </figure>
+              <h2>50 Amperes (A)</h2>
+            </div>
+            <div class="score watts">
+              <figure>
+                <img
+                  src="./img/geral/led-verde.png"
+                  alt="Imagem de uma led na cor verde."
+                />
+              </figure>
+              <h2>50 Watts (W)</h2>
+            </div>
           </div>
-          <div class="score watts">
-            <figure>
-              <img
-                src="./img/geral/led-verde.png"
-                alt="Imagem de uma led na cor verde."
-              />
-            </figure>
-            <h2>50 Watts (W)</h2>
-          </div>
+          
         </div>
-        <!-- <div class="container__time">
-          <span>Atualizações a cada X tempo</span>
-        </div> -->
         <div class="container__cards">
           <div class="card">
             <h2>Volts</h2>
             <img
-              src="./img/geral/led-azul.png"
-              alt="Imagem de uma led na cor azul forte."
+              src="./img/geral/led-amarela.png"
+              alt="Imagem de uma led na cor amarelo."
             />
             <p>
               Mede a tensão elétrica ou a diferença de potencial entre dois
@@ -232,5 +235,6 @@
       </h4>
     </footer>
     <script src="./js/main.js"></script>
+    <script src="./js/login.js"></script>
   </body>
 </html>
