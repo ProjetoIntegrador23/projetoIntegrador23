@@ -1,3 +1,4 @@
+// HEADER
 const header_navigation = document.querySelector('.navigation__menu')
 const button_header_navigation = document.querySelector('.navigation__menu-mobile')
 const button_header_line1 = button_header_navigation.querySelector(".line-1");
@@ -20,3 +21,17 @@ button_header_navigation.addEventListener('click', () => {
         button_header_line3.style.backgroundColor ="#fff";
     }
 });
+
+// FUNÇÕES GERAIS 
+function logout(){
+    localStorage.removeItem('userLoggedIn');
+    localStorage.removeItem('userData');
+}
+
+if (localStorage.getItem('userLoggedIn') === 'true') {
+    console.log('Usuário está logado!');
+    console.log(localStorage.getItem('userData'))
+  } else {
+    console.log('Usuário não está logado!');
+  }
+
