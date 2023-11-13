@@ -112,14 +112,16 @@ main .main__container .container__score {
 
 main .main__container .container__score .container__name{
   width: 100%;
-  max-height: 50px;
-  padding: 5px 90px;
+  max-height: 60px;
+  padding: 5px 40px;
+  max-width: 1360px;
+  margin: 0 auto;
 }
 
 main .main__container .container__score .container__name h1{
-  width: 100%;
-  max-height: 50px;
-  padding: 5px 80px;
+  color: #fff;
+  white-space: normal;
+  text-transform: capitalize;
 }
 
 main .main__container .container__score .scores{
@@ -568,7 +570,7 @@ footer h4 {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 890px) {
   main .main__container .container__cards{
     flex-direction: column;
     gap: 30px;
@@ -580,6 +582,12 @@ footer h4 {
 
 
 @media screen and (max-width: 600px) {
+  main .main__container .container__score .container__name h1{
+    font-size: 16px;
+  }
+  main .main__container .container__score .scores .score h2{
+    font-size: 16px;
+  }
   main .main__container .container__diverse .content__tips .tips__card{
     width: 85%;
   }
@@ -608,5 +616,11 @@ footer h4 {
     flex-direction: column;
     height: auto;
     gap: 30px;
+  }
+}
+
+@media screen and (max-width:300px){
+  main .main__container .container__score .scores .score{
+    width: 90px;
   }
 }

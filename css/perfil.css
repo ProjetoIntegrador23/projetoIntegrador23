@@ -230,6 +230,28 @@ main .main__container .right .form__right .inputs-fields .input-box label span{
     line-height: normal;
 }
 
+main .main__container .right .form__right .inputs-fields .input-box label input{
+  max-width: 100px;
+  height: 45px;
+  border-radius: 5px;
+  background: #fff;
+  border: none;
+  width: auto;
+  outline: none;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 5px 10px;
+  color: #262424;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #262424;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 main .main__container .right .form__right .inputs-fields .input-box label select{
     max-width: 300px;
     height: 45px;
