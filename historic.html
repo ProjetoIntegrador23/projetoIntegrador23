@@ -13,11 +13,28 @@
       src="https://kit.fontawesome.com/026675cdf7.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
     <!-- Google Font Link for Icons -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+    <script>
+      function checkLoginStatus() {
+        const userLoggedIn = localStorage.getItem("userLoggedIn");
+
+        if (userLoggedIn !== "true") {
+          window.location.href = "../index.html";
+        }
+      }
+      checkLoginStatus();
+    </script>
   </head>
   <body>
     <header>
@@ -44,7 +61,9 @@
           </li>
           <li class="menu__item"><a href="./perfil.html">Perfil</a></li>
           <li class="menu__item">
-            <a href="#"><i class="fa-solid fa-right-from-bracket"></i></a>
+            <a href="./index.html"
+              ><i class="fa-solid fa-right-from-bracket"></i
+            ></a>
           </li>
         </ul>
       </nav>
@@ -62,25 +81,35 @@
         </div>
         <div class="calendar">
           <ul class="weeks">
+            <li>Dom</li>
             <li>Seg</li>
             <li>Ter</li>
             <li>Qua</li>
             <li>Qui</li>
             <li>Sex</li>
             <li>Sáb</li>
-            <li>Dom</li>
           </ul>
           <ul class="days"></ul>
         </div>
       </div>
+      <!-- <div class="wrapper-readings">
+        <div class="leituras">
+          <div class="title">Leituras feitas no dia: </div>
+          <ul class="container-leituras">
+            <li></li>
+          </ul>
+        </div>
+        <div class="total-consumo">
+          <div class="title">Total:</div>
+        </div>
+      </div> -->
     </main>
     <footer>
       <h4>
-        Projeto Integrador | Aplicação Simulação de Medição e Controle de
-        Energia Residêncial
+        Projeto Integrador | Aplicação Web - Medidor de Consumo de Energia
       </h4>
     </footer>
-    <script src="./js/calendario.js" ></script>
-    <script src="./js/main.js" ></script>
+    <script src="./js/pages/historic.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>

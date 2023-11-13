@@ -175,7 +175,8 @@ main .main__container .container__login  a:hover{
     color: #F7D90F;
 }
 
-main .main__container .container__login input[type="submit"]{
+
+main .main__container .container__login #btn-formLogin{
     width: 80%;
     height: 50px;
     border-radius: 5px;
@@ -190,7 +191,7 @@ main .main__container .container__login input[type="submit"]{
     border: none;
 }
 
-main .main__container .container__login input[type="submit"]:hover{
+main .main__container .container__login #btn-formLogin:hover{
     background: rgb(12, 94, 175);
     transform: scale(1.01);
 }

@@ -91,7 +91,7 @@ header nav .navigation__menu #btn-login:hover {
   transform: scale(1.01);
 }
 
-header nav .navigation__menu #btn-login a {
+header nav .navigation__menu #btn-login{
   color: #262424;
   text-align: center;
   font-family: "Poppins", "sans-serif";
@@ -100,6 +100,7 @@ header nav .navigation__menu #btn-login a {
   font-weight: 600;
   line-height: normal;
   text-decoration: none;
+  cursor: pointer;
 }
 
 header nav .navigation__menu .menu__mode {

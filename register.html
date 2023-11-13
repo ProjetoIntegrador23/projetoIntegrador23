@@ -21,14 +21,13 @@
       src="https://kit.fontawesome.com/026675cdf7.js"
       crossorigin="anonymous"
     ></script>
-    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
   </head>
 <body>
   <header>
@@ -47,9 +46,7 @@
         <button id="btn-register">
           <a href="./register.html">Cadastrar-se</a>
         </button>
-        <button id="btn-login"><a href="./login.html">Entrar</a></button>
-        <!-- <div class="menu__mode">
-        </div> -->
+        <button id="btn-login">Entrar</button>
       </div>
     </nav>
   </header>
@@ -61,39 +58,41 @@
             <div class="input-box">
               <label for="nameUser">
                 <span>Nome Completo </span>
-                <input type="text" name="nameUser">
+                <input type="text" name="nameUser" id="nameUser">
               </label>
             </div>
             <div class="input-box">
               <label for="userEmail">
                 <span>E-mail</span>
-                <input type="email" name="userEmail">
+                <input type="email" name="userEmail" id="userEmail">
               </label>
               <label for="userPassword">
                 <span>Senha</span>
-                <input type="password" name="userPassword">
+                <input type="password" name="userPassword" id="userPassword">
               </label>
             </div>
             <div class="input-box">
               <label for="nameRede">
                 <span>Nome da rede</span>
-                <input type="text" name="nameRede">
+                <input type="text" name="nameRede" id="nameRede">
               </label>
               <label for="senhaRede">
                 <span>Senha da rede</span>
-                <input type="password" name="senhaRede">
+                <input type="password" name="senhaRede" id="senhaRede">
               </label>
             </div>
             <div class="input-box">
               <label for="enderecoMacEsp">
                 <span>Endereço MAC do Módulo de Wifi / ESP 32<i class="fa-solid fa-circle-info"></i></span>
-                <input type="text" name="enderecoMacEsp">
+                <input type="text" name="enderecoMacEsp" id="enderecoMacEsp">
               </label>
             </div>
           </div>
-          <button class="btn-register" type="submit">
+          <button class="btn-register">
             Cadastrar
           </button>
+          <div class="mensagem-registro-realizado" style="display:none"><span>Seu cadastro foi realizado com sucesso!</span></div>
+          <div class="mensagem-registro-nao-realizado" style="display:none"><span>Seu cadastro não foi realizado!</span></div>
         </form>
       </div>
       <div class="container__description">
@@ -107,10 +106,10 @@
   </main>
   <footer>
     <h4>
-      Projeto Integrador | Aplicação Simulação de Medição e Controle de
-      Energia Residêncial 
+      Projeto Integrador | Aplicação Web - Medidor de Consumo de Energia  
     </h4>
   </footer>
-  <script src="./js/register.js"></script>
+  <script src="./js/pages/register.js"></script>
+  <script src="./js/index.js"></script>
 </body>
 </html>

@@ -13,6 +13,23 @@
       src="https://kit.fontawesome.com/026675cdf7.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+    <script>
+      function checkLoginStatus() {
+        const userLoggedIn = localStorage.getItem("userLoggedIn");
+      
+        if (userLoggedIn !== "true") {
+          window.location.href = "../index.html";
+        }
+      }
+      checkLoginStatus();
+    </script>
   </head>
   <body>
     <header>
@@ -39,7 +56,9 @@
           </li>
           <li class="menu__item"><a href="./perfil.html">Perfil</a></li>
           <li class="menu__item">
-            <a href="#"><i class="fa-solid fa-right-from-bracket"></i></a>
+            <a href="./index.html"
+              ><i class="fa-solid fa-right-from-bracket"></i
+            ></a>
           </li>
         </ul>
       </nav>
@@ -85,64 +104,66 @@
             <button class="btn-alter" type="submit">Alterar dados</button>
           </form>
         </div>
-     
+
         <div class="right">
           <form class="form__right">
             <div class="inputs-fields">
               <div class="input-box">
-                  <label for="metaCosnumo">
-                      <span>Defina uma meta de consumo de energia mensal</span>
-                      <select name="metaCosnumo" id="meta">
-                          <option value="nenhum">Selecione</option>
-                          <option value="volts">Volts</option>
-                          <option value="watts">Watts</option>
-                      </select>
-                  </label>
+                <label for="metaCosnumo">
+                  <span>Defina uma meta de consumo de energia mensal</span>
+                  <input type="number" name="valueMeta" />
+                  <select name="metaCosnumo" id="meta">
+                    <option value="nenhum">Selecione</option>
+                    <option value="volts">Volts</option>
+                    <option value="watts">Watts</option>
+                  </select>
+                </label>
               </div>
-            </div>  
-            <button class="btn-define" type="submit">DEFINIR</button>  
-            
+            </div>
+            <button class="btn-define" type="submit">DEFINIR</button>
+
             <figure class="form__image">
-              <img src="./img/geral/database.png" alt="Imagem">
-            </figure> 
-               
+              <img src="./img/geral/database.png" alt="Imagem" />
+            </figure>
           </form>
-          <button class="btn-delete">Deletar conta</button> 
+          <button class="btn-delete">Deletar conta</button>
         </div>
-      
       </div>
     </main>
     <footer>
       <h4>
-        Projeto Integrador | Aplicação Simulação de Medição e Controle de
-        Energia Residêncial
+        Projeto Integrador | Aplicação Web - Medidor de Consumo de Energia 
       </h4>
     </footer>
+    <script src="./js/pages/login.js"></script>
+    <script src="./js/pages/main.js"></script>
+    <script src="./js/pages/perfil.js"></script>
   </body>
 </html>
 
 <script>
-  const header_navigation = document.querySelector('.navigation__menu')
-const button_header_navigation = document.querySelector('.navigation__menu-mobile')
-const button_header_line1 = button_header_navigation.querySelector(".line-1");
-const button_header_line2 = button_header_navigation.querySelector(".line-2");
-const button_header_line3 = button_header_navigation.querySelector(".line-3");
+  const header_navigation = document.querySelector(".navigation__menu");
+  const button_header_navigation = document.querySelector(
+    ".navigation__menu-mobile"
+  );
+  const button_header_line1 = button_header_navigation.querySelector(".line-1");
+  const button_header_line2 = button_header_navigation.querySelector(".line-2");
+  const button_header_line3 = button_header_navigation.querySelector(".line-3");
 
-button_header_navigation.addEventListener('click', () => {
-    header_navigation.classList.toggle('active');
-    if(header_navigation.classList.contains("active")){
-        button_header_line1.style.transform ="translateY(8px) rotate(45deg)";
-        button_header_line1.style.backgroundColor ="#f7d90f";
-        button_header_line2.style.opacity = "0";
-        button_header_line3.style.transform = "translateY(-8px) rotate(-45deg)";
-        button_header_line3.style.backgroundColor ="#f7d90f";
-    }else{
-        button_header_line1.style.transform ="unset";
-        button_header_line1.style.backgroundColor ="#fff";
-        button_header_line2.style.opacity = "1";
-        button_header_line3.style.transform = "unset";
-        button_header_line3.style.backgroundColor ="#fff";
+  button_header_navigation.addEventListener("click", () => {
+    header_navigation.classList.toggle("active");
+    if (header_navigation.classList.contains("active")) {
+      button_header_line1.style.transform = "translateY(8px) rotate(45deg)";
+      button_header_line1.style.backgroundColor = "#f7d90f";
+      button_header_line2.style.opacity = "0";
+      button_header_line3.style.transform = "translateY(-8px) rotate(-45deg)";
+      button_header_line3.style.backgroundColor = "#f7d90f";
+    } else {
+      button_header_line1.style.transform = "unset";
+      button_header_line1.style.backgroundColor = "#fff";
+      button_header_line2.style.opacity = "1";
+      button_header_line3.style.transform = "unset";
+      button_header_line3.style.backgroundColor = "#fff";
     }
-});
-
+  });
 </script>

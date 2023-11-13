@@ -13,6 +13,22 @@
       src="https://kit.fontawesome.com/026675cdf7.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+    <script>
+      function checkLoginStatus() {
+        const userLoggedIn = localStorage.getItem("userLoggedIn");
+        if (userLoggedIn !== "true") {
+          window.location.href = "../index.html";
+        }
+      }
+      checkLoginStatus();
+    </script>
   </head>
   <body>
     <header>
@@ -39,7 +55,9 @@
           </li>
           <li class="menu__item"><a href="./perfil.html">Perfil</a></li>
           <li class="menu__item">
-            <a href="./index.html" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i></a>
+            <a href="./index.html" onclick="logout()"
+              ><i class="fa-solid fa-right-from-bracket"></i
+            ></a>
           </li>
         </ul>
       </nav>
@@ -48,7 +66,7 @@
       <div class="main__container">
         <div class="container__score">
           <div class="container__name">
-            <h1 id="nameUserLogged">TESTE</h1>
+            <h1 id="nameUserLogged">Olá, Pessoa</h1>
           </div>
           <div class="scores">
             <div class="score volts">
@@ -58,7 +76,7 @@
                   alt="Imagem de uma led na cor amarelo."
                 />
               </figure>
-              <h2>50 Volts (V)</h2>
+              <h2 id="voltsData">Volts (V)</h2>
             </div>
             <div class="score ampere">
               <figure>
@@ -67,7 +85,7 @@
                   alt="Imagem de uma led na cor vermelha."
                 />
               </figure>
-              <h2>50 Amperes (A)</h2>
+              <h2 id="amperesData"> Amperes (A)</h2>
             </div>
             <div class="score watts">
               <figure>
@@ -76,10 +94,9 @@
                   alt="Imagem de uma led na cor verde."
                 />
               </figure>
-              <h2>50 Watts (W)</h2>
+              <h2 id="wattsData">  Watts (W)</h2>
             </div>
           </div>
-          
         </div>
         <div class="container__cards">
           <div class="card">
@@ -230,11 +247,12 @@
     </main>
     <footer>
       <h4>
-        Projeto Integrador | Aplicação Simulação de Medição e Controle de
-        Energia Residêncial
+        Projeto Integrador | Aplicação Web - Medidor de Consumo de Energia 
       </h4>
     </footer>
+    <!-- <script src="./js/pages/login.js"></script> -->
     <script src="./js/main.js"></script>
-    <script src="./js/login.js"></script>
+    <script src="./js/pages/home.js"></script>
   </body>
 </html>
+ 
