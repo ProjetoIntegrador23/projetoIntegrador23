@@ -3,7 +3,6 @@ body {
   background-repeat: no-repeat;
 }
 
-
 /* HEADER */
 header {
   width: 100%;
@@ -110,7 +109,7 @@ main .main__container .container__score {
   justify-content: space-evenly;
 }
 
-main .main__container .container__score .container__name{
+main .main__container .container__score .container__name {
   width: 100%;
   max-height: 60px;
   padding: 5px 40px;
@@ -118,13 +117,13 @@ main .main__container .container__score .container__name{
   margin: 0 auto;
 }
 
-main .main__container .container__score .container__name h1{
+main .main__container .container__score .container__name h1 {
   color: #fff;
   white-space: normal;
   text-transform: capitalize;
 }
 
-main .main__container .container__score .scores{
+main .main__container .container__score .scores {
   width: 100%;
   height: 100%;
   display: flex;
@@ -140,6 +139,10 @@ main .main__container .container__score .scores .score {
   justify-content: center;
   align-items: center;
   gap: 50px;
+}
+
+main .main__container .container__score .scores .score:hover {
+  transform: scale(1.02);
 }
 
 main .main__container .container__score .scores .score figure {
@@ -400,8 +403,7 @@ main .main__container .container__diverse .content__fare .content p {
 }
 
 main .main__container .container__diverse .content__fare .content a {
-
-  color: #036;
+  color: red;
 }
 
 main .main__container .container__diverse .content__fare .content a:hover {
@@ -526,14 +528,14 @@ footer h4 {
     background-color: #fff;
     z-index: 99;
     transition: all 0.5s ease-in-out;
-    display:none;
+    display: none;
     right: 0;
   }
   header .navigation__menu.active {
     transition: all 0.5s ease;
     display: flex;
   }
-  header .navigation__menu li a{
+  header .navigation__menu li a {
     color: #000;
   }
   main .main__container .container__goal {
@@ -565,62 +567,66 @@ footer h4 {
   main .main__container .container__diverse .content__tips .tips__card {
     width: 50%;
   }
-  main .main__container .container__cards{
+  main .main__container .container__cards {
     height: auto;
   }
 }
 
 @media screen and (max-width: 890px) {
-  main .main__container .container__cards{
+  main .main__container .container__cards {
     flex-direction: column;
     gap: 30px;
   }
-  main .main__container .container__cards .card{
+  main .main__container .container__cards .card {
     width: 70%;
   }
 }
 
-
 @media screen and (max-width: 600px) {
-  main .main__container .container__score .container__name h1{
+  main .main__container .container__score .container__name h1 {
     font-size: 16px;
   }
-  main .main__container .container__score .scores .score h2{
+  main .main__container .container__score .scores .score h2 {
     font-size: 16px;
   }
-  main .main__container .container__diverse .content__tips .tips__card{
+  main .main__container .container__diverse .content__tips .tips__card {
     width: 85%;
   }
 }
 
 @media screen and (max-width: 500px) {
-  main .main__container .container__score .score{
+  main .main__container .container__score .score {
     width: 100px;
   }
 }
 @media screen and (max-width: 430px) {
-  main .main__container .container__cards .card{
+  main .main__container .container__cards .card {
     width: 100%;
   }
-  main .main__container .container__diverse .content__tips .tips__card{
+  main .main__container .container__diverse .content__tips .tips__card {
     width: 100%;
   }
-  main .main__container .container__diverse .content__fare .content__tips .cards{
+  main
+    .main__container
+    .container__diverse
+    .content__fare
+    .content__tips
+    .cards {
     flex-direction: column;
     gap: 20px;
   }
 }
 
-@media screen and (max-width:380px){
-  main .main__container .container__score{
+@media screen and (max-width: 380px) {
+  main .main__container .container__score {
     flex-direction: column;
     height: auto;
     gap: 30px;
   }
 }
 
-@media screen and (max-width:300px){
-  main .main__container .container__score .scores .score{
+@media screen and (max-width: 300px) {
+  main .main__container .container__score .scores .score {
     width: 90px;
   }
 }

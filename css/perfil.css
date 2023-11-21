@@ -1,7 +1,7 @@
 body {
-    background-image: linear-gradient(150deg, #052545 45%, #60a8e4 45%);
-    background-repeat: no-repeat;
-  }
+  background-image: linear-gradient(150deg, #052545 45%, #60a8e4 45%);
+  background-repeat: no-repeat;
+}
 
 /* HEADER */
 header {
@@ -86,151 +86,158 @@ header .navigation__menu li a:hover {
 
 /* MAIN */
 
-main{
-    width: 100%;
+main {
+  width: 100%;
 }
 
-main .main__container{
-    width: 100%;
+main .main__container {
+  width: 100%;
   margin: 0 auto;
   max-width: 1440px;
   padding: 0 40px;
-  display: flex;  
+  display: flex;
   gap: 60px;
   align-items: center;
 }
 
-main .main__container .left{
-    width: 50%;
+main .main__container .left {
+  width: 50%;
 }
 
-main .main__container .left .form__left{
-    width: 100%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
+main .main__container .left .form__left {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
-main .main__container .left .form__left .inputs-fields{
-    width: 100%;
-    display: flex;
-    flex-direction:column;
-    gap: 30px;
+main .main__container .left .form__left .inputs-fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
-main .main__container .left .form__left .inputs-fields .input-box{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-}
-
-main .main__container .left .form__left .inputs-fields .input-box label{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+main .main__container .left .form__left .inputs-fields .input-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
 }
 
-main .main__container .left .form__left .inputs-fields .input-box label span{
-    color: #ffff;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+main .main__container .left .form__left .inputs-fields .input-box label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-main .main__container .left .form__left .inputs-fields .input-box label input{
-    max-width: 300px;
-    height: 45px;
-    border-radius: 5px;
-    background: #fff;
-    border: none;
-    width: auto;
-    outline: none;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    padding: 5px 10px;
-    color: #262424;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    color: #262424;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+main .main__container .left .form__left .inputs-fields .input-box label span {
+  color: #ffff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
-main .main__container .left .form__left .btn-alter{
-    width: 300px;
-    height: 50px;
-    border-radius: 5px;
-    background: #036;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    color: #fff;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-align: center;
-    border: none;
-    cursor: pointer;
-}
-main .main__container .left .form__left .btn-alter:hover{
-    background: rgb(12, 94, 175);
-    transform: scale(1.01);
-}
-
-main .main__container .right{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
+main .main__container .left .form__left .inputs-fields .input-box label input {
+  max-width: 300px;
+  height: 45px;
+  border-radius: 5px;
+  background: #fff;
+  border: none;
+  width: auto;
+  outline: none;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 5px 10px;
+  color: #262424;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #262424;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
-main .main__container .right .form__right{
-       width: 100%;
-       padding: 10px;
-       display: flex;
-       flex-direction: column;
-       gap: 30px;
-       align-items: center;
+main .main__container .left .form__left .btn-alter {
+  width: 300px;
+  height: 50px;
+  border-radius: 5px;
+  background: #036;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+main .main__container .left .form__left .btn-alter:hover {
+  background: rgb(12, 94, 175);
+  transform: scale(1.01);
 }
 
-main .main__container .right .form__right .inputs-fields{
-    width: 100%;
-    display: flex;
-    flex-direction:column;
-    gap: 30px;
+main .main__container .right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
 }
 
-main .main__container .right .form__right .inputs-fields .input-box{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
+main .main__container .right .form__right {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
 }
 
-main .main__container .right .form__right .inputs-fields .input-box label{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+main .main__container .right .form__right .inputs-fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
-main .main__container .right .form__right .inputs-fields .input-box label span{
-    color: #fff;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+main .main__container .right .form__right .inputs-fields .input-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
 }
 
-main .main__container .right .form__right .inputs-fields .input-box label input{
+main .main__container .right .form__right .inputs-fields .input-box label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+main .main__container .right .form__right .inputs-fields .input-box label span {
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+main
+  .main__container
+  .right
+  .form__right
+  .inputs-fields
+  .input-box
+  label
+  input {
   max-width: 100px;
   height: 45px;
   border-radius: 5px;
@@ -252,75 +259,82 @@ main .main__container .right .form__right .inputs-fields .input-box label input{
   line-height: normal;
 }
 
-main .main__container .right .form__right .inputs-fields .input-box label select{
-    max-width: 300px;
-    height: 45px;
-    border-radius: 5px;
-    background: #fff;
-    border: none;
-    outline: none;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    padding: 5px 10px;
-    color: #262424;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+main
+  .main__container
+  .right
+  .form__right
+  .inputs-fields
+  .input-box
+  label
+  select {
+  max-width: 300px;
+  height: 45px;
+  border-radius: 5px;
+  background: #fff;
+  border: none;
+  outline: none;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 5px 10px;
+  color: #262424;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
-main .main__container .right .form__right .form__image{
-    width:100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 450px;
+main .main__container .right .form__right .form__image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
 }
 
-main .main__container .right .form__right .form__image img{
-    width:100%;
-    height: 100%;
-    object-fit: contain;
+main .main__container .right .form__right .form__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-main .main__container .right .form__right .btn-define{
-    width: 300px;
-    height: 50px;
-    border-radius: 5px;
-    background: #036;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    color: #fff;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-align: center;
-    border: none;
-    cursor: pointer;
+main .main__container .right .form__right .btn-define {
+  width: 300px;
+  height: 50px;
+  border-radius: 5px;
+  background: #036;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  border: none;
+  cursor: pointer;
 }
 
-main .main__container .right .form__right .btn-define:hover{
-    background: rgb(12, 94, 175);
-    transform: scale(1.01);
+main .main__container .right .form__right .btn-define:hover {
+  background: rgb(12, 94, 175);
+  transform: scale(1.01);
 }
 
-main .main__container .right .btn-delete{
-    width: 300px;
-    height: 50px;
-    border-radius: 5px;
-    background: #fff;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    color: #D20707;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-align: center;
-    border: none;
-    cursor: pointer;
+main .main__container .right .btn-delete {
+  width: 300px;
+  height: 50px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #d20707;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  border: none;
+  cursor: pointer;
 }
 
-main .main__container .right .btn-delete:hover{
-    transform: scale(1.01);
+main .main__container .right .btn-delete:hover {
+  transform: scale(1.01);
 }
 
 /* FOOTER */
@@ -380,40 +394,54 @@ footer h4 {
     transition: all 0.5s ease;
     display: flex;
   }
-  header .navigation__menu li a{
+  header .navigation__menu li a {
     color: #000;
   }
-  main .main__container .left{
+  main .main__container .left {
     width: 100%;
   }
-  main .main__container .left .form__left{
+  main .main__container .left .form__left {
     align-items: center;
   }
-  main .main__container .left .form__left .inputs-fields .input-box label input{
+  main
+    .main__container
+    .left
+    .form__left
+    .inputs-fields
+    .input-box
+    label
+    input {
     max-width: 350px;
   }
-  main .main__container .right{
+  main .main__container .right {
     width: 100%;
   }
-  main .main__container .right .form__right .inputs-fields .input-box label select{
+  main
+    .main__container
+    .right
+    .form__right
+    .inputs-fields
+    .input-box
+    label
+    select {
     max-width: 350px;
   }
 }
 
-@media screen and (max-width:600px){
-    main .main__container .left .form__left .inputs-fields .input-box{
-        flex-direction: column;
-    }
+@media screen and (max-width: 600px) {
+  main .main__container .left .form__left .inputs-fields .input-box {
+    flex-direction: column;
+  }
 }
 
-@media screen and (max-width:340px){
-    main .main__container .left .form__left .btn-alter{
-        width: 100%;
-    }
-    main .main__container .right .form__right .btn-define{
-        width: 100%;
-    }
-    main .main__container .right .btn-delete{
-        width: 100%;
-    }
+@media screen and (max-width: 340px) {
+  main .main__container .left .form__left .btn-alter {
+    width: 100%;
+  }
+  main .main__container .right .form__right .btn-define {
+    width: 100%;
+  }
+  main .main__container .right .btn-delete {
+    width: 100%;
+  }
 }

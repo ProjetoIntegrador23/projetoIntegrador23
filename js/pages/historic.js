@@ -20,7 +20,7 @@ if (localStorage.getItem("userLoggedIn") === "true") {
     // CALENDÁRIO DINÂMICO
     const daysTag = document.querySelector(".days"), // Seleciona o elemento HTML com a classe "days"
       currentDate = document.querySelector(".current-date"), // Seleciona o elemento HTML com a classe "current-date"
-      prevNextIcon = document.querySelectorAll(".icons span"); // Seleciona todos os elementos HTML com a classe "icons" e a tag "span"
+      prevNextIcon = document.querySelectorAll(".icons i"); // Seleciona todos os elementos HTML com a classe "icons" e a tag "span"
 
     // Obtendo a nova data, o ano atual e o mês atual
     let date = new Date(), // Cria um objeto Date para a data atual
@@ -106,9 +106,23 @@ if (localStorage.getItem("userLoggedIn") === "true") {
 
     // LEITURAS DE CONSUMO DE ENERGIA
     const daysList = document.querySelector(".days");
+    const contentReadings = document.querySelector(
+      ".wrapper-readings__content"
+    );
+    const contentTotal = document.querySelector(".wrapper-readings__total");
+
+    const contentListTotal = document.createElement("ul");
+    let contentReadingsChilds = contentReadings.childNodes;
+    let contentTotalChilds = contentTotal.childNodes;
+    console.log(daysList);
     daysList.addEventListener("click", (event) => {
       const clickedElement = event.target;
+      console.log(clickedElement);
       if (clickedElement.tagName === "LI") {
+        document
+          .querySelectorAll(".days li")
+          .forEach((dia) => dia.classList.remove("selected"));
+        clickedElement.classList.add("selected");
         const clickedDay = parseInt(clickedElement.textContent);
         const clickedDate = new Date(currYear, currMonth, clickedDay);
         const leiturasRef = firebase
@@ -121,8 +135,67 @@ if (localStorage.getItem("userLoggedIn") === "true") {
           .then((snapshot) => {
             const leituras = snapshot.val();
             if (leituras) {
+              for (var i = contentReadingsChilds.length - 1; i >= 0; i--) {
+                contentReadings.removeChild(contentReadingsChilds[i]);
+              }
+              for (var i = contentTotalChilds.length - 1; i >= 0; i--) {
+                contentTotal.removeChild(contentTotalChilds[i]);
+              }
+              let totalAmperes = 0;
+              let totalVolts = 0;
+              let totalWatts = 0;
+
+              let listReadings = document.createElement("ul");
+              for (const leiturasID in leituras) {
+                const leitura = leituras[leiturasID];
+                let itemReading = document.createElement("li");
+
+                const amperesValue =
+                  leitura.amperes !== "" ? parseFloat(leitura.amperes) : 0;
+                const voltsValue =
+                  leitura.volts !== "" ? parseFloat(leitura.volts) : 0;
+                const wattsValue =
+                  leitura.watts !== "" ? parseFloat(leitura.watts) : 0;
+
+                totalAmperes += amperesValue;
+                totalVolts += voltsValue;
+                totalWatts += wattsValue;
+
+                const amperesText =
+                  leitura.amperes !== ""
+                    ? `${leitura.amperes} A`
+                    : "Não informado";
+                const voltsText =
+                  leitura.volts !== ""
+                    ? `${leitura.amperes} V`
+                    : "Não informado";
+                const wattsText =
+                  leitura.watts !== "" ? `${leitura.watts} W` : "Não informado";
+
+                itemReading.innerHTML = `<h3>Leitura</h3>
+                <span>Amperes: ${amperesText} </span>
+                <span>Volts: ${voltsText} </span>
+                <span>Watts: ${wattsText} </span>
+                `;
+                listReadings.appendChild(itemReading);
+              }
+              contentReadings.appendChild(listReadings);
+              contentTotal.innerHTML = "<h3>Total</h3>";
+              contentListTotal.innerHTML = `<li>Amperes:  ${totalAmperes} </li><li>Volts:  ${totalVolts} </li><li>Watts:  ${totalWatts} </li>`;
+              contentTotal.appendChild(contentListTotal);
               console.log("Leituras do dia:", leituras);
             } else {
+              for (var i = contentReadingsChilds.length - 1; i >= 0; i--) {
+                contentReadings.removeChild(contentReadingsChilds[i]);
+              }
+              for (var i = contentTotalChilds.length - 1; i >= 0; i--) {
+                contentTotal.removeChild(contentTotalChilds[i]);
+              }
+              let message_errror = document.createElement("span");
+              message_errror.classList.add("message-error");
+              message_errror.textContent =
+                "Nenhuma leitura para o dia selecionado.";
+              contentReadings.appendChild(message_errror);
               console.log("Nenhuma leitura para o dia selecionado.");
             }
           })

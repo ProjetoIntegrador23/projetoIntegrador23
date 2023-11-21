@@ -36,6 +36,7 @@ buttonForm.addEventListener("click", function (e) {
   validateEmail(emailUsuario.value);
   e.preventDefault();
   if (newUsuario) {
+    // alert("Se cadastro foi realizado com sucesso!");
     setTimeout(function () {
       window.location.href = "../login.html";
     }, 1000);
@@ -46,6 +47,8 @@ buttonForm.addEventListener("click", function (e) {
 
 function createUsuario(name, email, senha, rede, senhaRede, modulo) {
   const newUserID = firebase.database().ref().child("Usuario").push().key;
+  // const hashedPassword = bcrypt.hashSync(senha, 10);
+  // console.log(hashedPassword)
   const userData = {
     userId: newUserID,
     name: name,
@@ -63,3 +66,59 @@ function createUsuario(name, email, senha, rede, senhaRede, modulo) {
 
   return 1;
 }
+
+// if (typeof bcrypt !== 'undefined') {
+//   console.log('bcrypt.js foi importado com sucesso!');
+// } else {
+//   console.error('Erro ao importar bcrypt.js');
+// }
+
+const bcrypt = require("bcryptjs");
+
+// Função para criar uma senha criptografada
+async function hashPassword(password) {
+  try {
+    // Gerar um salt (valor aleatório para aumentar a segurança)
+    const salt = await bcrypt.genSalt(10);
+
+    // Hash da senha com o salt
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    return hashedPassword;
+  } catch (error) {
+    throw new Error("Erro ao criptografar a senha");
+  }
+}
+
+// Função para verificar uma senha em comparação com a senha criptografada
+async function comparePassword(inputPassword, hashedPassword) {
+  try {
+    // Comparar a senha de entrada com a senha criptografada
+    const isMatch = await bcrypt.compare(inputPassword, hashedPassword);
+
+    return isMatch;
+  } catch (error) {
+    throw new Error("Erro ao comparar as senhas");
+  }
+}
+
+// Exemplo de uso:
+const senhaOriginal = "senha123";
+
+// Criar senha criptografada
+hashPassword(senhaOriginal)
+  .then((hashedPassword) => {
+    console.log("Senha criptografada:", hashedPassword);
+
+    // Verificar senha
+    comparePassword("senha123", hashedPassword)
+      .then((isMatch) => {
+        console.log("Senha correta?", isMatch);
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  })
+  .catch((error) => {
+    console.error(error.message);
+  });

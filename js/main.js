@@ -22,7 +22,7 @@ button_header_navigation.addEventListener("click", () => {
     button_header_line3.style.transform = "unset";
     button_header_line3.style.backgroundColor = "#fff";
   }
-}); 
+});
 
 // FUNÇÕES GERAIS
 function logout() {

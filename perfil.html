@@ -23,7 +23,7 @@
     <script>
       function checkLoginStatus() {
         const userLoggedIn = localStorage.getItem("userLoggedIn");
-      
+
         if (userLoggedIn !== "true") {
           window.location.href = "../index.html";
         }
@@ -66,38 +66,50 @@
     <main>
       <div class="main__container">
         <div class="left">
-          <form class="form__left">
+          <form class="form__left" id="formAlter">
             <div class="inputs-fields">
               <div class="input-box">
                 <label for="userName">
                   <span>Nome completo</span>
-                  <input type="text" name="userName" />
+                  <input type="text" name="userName" id="nameUserAlter" />
                 </label>
               </div>
               <div class="input-box">
                 <label for="userEmail">
                   <span>E-mail</span>
-                  <input type="email" name="userEmail" />
+                  <input type="email" name="userEmail" id="emailUserAlter" />
                 </label>
                 <label for="userPassword">
                   <span>Senha</span>
-                  <input type="password" name="userPassword" />
+                  <input
+                    type="password"
+                    name="userPassword"
+                    id="passwordUserAlter"
+                  />
                 </label>
               </div>
               <div class="input-box">
                 <label for="nameRedeWifi">
                   <span>Nome da rede Wifi</span>
-                  <input type="text" name="nameRedeWifi" />
+                  <input type="text" name="nameRedeWifi" id="nameRedeWifi" />
                 </label>
                 <label for="passwordRedeWifii">
                   <span>Senha da rede Wifi</span>
-                  <input type="password" name="passwordRedeWifi" />
+                  <input
+                    type="password"
+                    name="passwordRedeWifi"
+                    id="passwordRedeWifi"
+                  />
                 </label>
               </div>
               <div class="input-box">
                 <label for="enderecoMacWifi">
                   <span>Endereço MAC do módulo de Wifi / ESP32</span>
-                  <input type="text" name="enderecoMacWifi" />
+                  <input
+                    type="text"
+                    name="enderecoMacWifi"
+                    id="enderecoMacWifi"
+                  />
                 </label>
               </div>
             </div>
@@ -106,13 +118,13 @@
         </div>
 
         <div class="right">
-          <form class="form__right">
+          <form class="form__right" id="formMeta">
             <div class="inputs-fields">
               <div class="input-box">
                 <label for="metaCosnumo">
                   <span>Defina uma meta de consumo de energia mensal</span>
-                  <input type="number" name="valueMeta" />
-                  <select name="metaCosnumo" id="meta">
+                  <input type="number" name="valueMeta" id="valueMeta" />
+                  <select name="metaCosnumo" id="typeMeta">
                     <option value="nenhum">Selecione</option>
                     <option value="volts">Volts</option>
                     <option value="watts">Watts</option>
@@ -132,7 +144,7 @@
     </main>
     <footer>
       <h4>
-        Projeto Integrador | Aplicação Web - Medidor de Consumo de Energia 
+        Projeto Integrador | Aplicação Web - Medidor de Consumo de Energia
       </h4>
     </footer>
     <script src="./js/pages/login.js"></script>
