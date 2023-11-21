@@ -77,3 +77,19 @@ if (localStorage.getItem("userLoggedIn") === "true") {
 }
 
 // FUNÇÃO PARA ATUALIZAR A BARRA DE PROGRESS
+const metaRef = firebase
+.database()
+.ref("Usuario/" + userID + "/metaConsumo");
+metaRef
+.once("value")
+.then((snapshot) => {
+  const meta = snapshot.val();
+  if (meta) {
+    
+  } else {
+    
+  }
+})
+.catch((error) => {
+  console.error("Erro ao acessar o banco de dados:", error);
+});

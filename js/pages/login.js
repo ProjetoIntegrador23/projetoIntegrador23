@@ -6,7 +6,7 @@ const firebaseConfig = {
   storageBucket: "meuconsumodeenergiaweb.appspot.com",
   messagingSenderId: "376629492849",
   appId: "1:376629492849:web:984c2d29d8427a42d6afd0",
-}; 
+};
 
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
@@ -21,7 +21,6 @@ buttonLogin.addEventListener("click", function (e) {
 });
 
 function loginUser(email, password) {
-  
   const usersRef = firebase.database().ref("Usuario");
   usersRef
     .once("value")
@@ -29,19 +28,19 @@ function loginUser(email, password) {
       const users = snapshot.val();
       for (const userId in users) {
         const user = users[userId];
-        console.log(userId)
+        console.log(userId);
         if (user.email === email && user.senha === password) {
-          localStorage.setItem('userLoggedIn', 'true');
+          localStorage.setItem("userLoggedIn", "true");
           const userData = {
             userId: userId,
             nome: user.name,
             email: user.email,
             rede: user.rede,
             senhaRede: user.senhaRede,
-            modulo: user.modulo, 
+            modulo: user.modulo,
           };
           const userDataJson = JSON.stringify(userData);
-          localStorage.setItem('userData', userDataJson);
+          localStorage.setItem("userData", userDataJson);
           setTimeout(function () {
             window.location.href = "../home.html";
           }, 1000);
@@ -54,4 +53,3 @@ function loginUser(email, password) {
       console.error("Erro ao acessar o banco de dados:", error);
     });
 }
-

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head> 
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meu consumo de energia | Registrar Usuário</title>
@@ -28,88 +28,124 @@
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.2.0/bcrypt.min.js"
+      integrity="sha512-BJZhA/ftU3DVJvbBMWZwp7hXc49RJHq0xH81tTgLlG16/OkDq7VbNX6nUnx+QY4bBZkXtJoG0b0qihuia64X0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.2.0/bcrypt.js"
+      integrity="sha512-tFbGxu83rXLUBv8rUnccoJqzpYG3SiZnycAZph1kmsxcwoPnWBhL2ILP6on/6jm7dgQDDGOuNAwNRRmAzDo5ww=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
-<body>
-  <header>
-    <nav class="header__navigation">
-      <div class="navigation__logo">
-        <figure>
-          <a href="./index.html">
-            <img
-            src="./img/logo/logoPrincipal.png"
-            alt="Logo do site - Um raio com amarela em torno de duas flexas, de cores azul forte e amarela, em forma de circulo"
-          />
-          </a>
-        </figure>
-      </div>
-      <div class="navigation__menu">
-        <button id="btn-register">
-          <a href="./register.html">Cadastrar-se</a>
-        </button>
-        <button id="btn-login">Entrar</button>
-      </div>
-    </nav>
-  </header>
-  <main>
-    <div class="main__container">
-      <div class="container__formulario">
-        <form>
-          <div class="input-fields">
-            <div class="input-box">
-              <label for="nameUser">
-                <span>Nome Completo </span>
-                <input type="text" name="nameUser" id="nameUser">
-              </label>
-            </div>
-            <div class="input-box">
-              <label for="userEmail">
-                <span>E-mail</span>
-                <input type="email" name="userEmail" id="userEmail">
-              </label>
-              <label for="userPassword">
-                <span>Senha</span>
-                <input type="password" name="userPassword" id="userPassword">
-              </label>
-            </div>
-            <div class="input-box">
-              <label for="nameRede">
-                <span>Nome da rede</span>
-                <input type="text" name="nameRede" id="nameRede">
-              </label>
-              <label for="senhaRede">
-                <span>Senha da rede</span>
-                <input type="password" name="senhaRede" id="senhaRede">
-              </label>
-            </div>
-            <div class="input-box">
-              <label for="enderecoMacEsp">
-                <span>Endereço MAC do Módulo de Wifi / ESP 32<i class="fa-solid fa-circle-info"></i></span>
-                <input type="text" name="enderecoMacEsp" id="enderecoMacEsp">
-              </label>
-            </div>
-          </div>
-          <button class="btn-register">
-            Cadastrar
+  <body>
+    <header>
+      <nav class="header__navigation">
+        <div class="navigation__logo">
+          <figure>
+            <a href="./index.html">
+              <img
+                src="./img/logo/logoPrincipal.png"
+                alt="Logo do site - Um raio com amarela em torno de duas flexas, de cores azul forte e amarela, em forma de circulo"
+              />
+            </a>
+          </figure>
+        </div>
+        <div class="navigation__menu">
+          <button id="btn-register">
+            <a href="./register.html">Cadastrar-se</a>
           </button>
-          <div class="mensagem-registro-realizado" style="display:none"><span>Seu cadastro foi realizado com sucesso!</span></div>
-          <div class="mensagem-registro-nao-realizado" style="display:none"><span>Seu cadastro não foi realizado!</span></div>
-        </form>
-      </div>
-      <div class="container__description">
-        <div class="description__content">
-          <p>Recomendamos que cadastre a sua rede wi-fi principal da residência, pois, as informações serão passadas a partir de uma conexão estavel a um provedor de internet/wi-fi.</p>
-          <p>Nos comprometemos a deixar suas informações seguras e atualizações e aprimoramento serão sendo lançadas em breve.</p>
-          <p>Informamos que as informações aqui passadas são de acordo com os valores e métricas seguidas pela CPFL Paulista 2023. </p>
+          <button id="btn-login">Entrar</button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="main__container">
+        <div class="container__formulario">
+          <form>
+            <div class="input-fields">
+              <div class="input-box">
+                <label for="nameUser">
+                  <span>Nome Completo </span>
+                  <input type="text" name="nameUser" id="nameUser" />
+                </label>
+              </div>
+              <div class="input-box">
+                <label for="userEmail">
+                  <span>E-mail</span>
+                  <input type="email" name="userEmail" id="userEmail" />
+                </label>
+                <label for="userPassword">
+                  <span>Senha</span>
+                  <input
+                    type="password"
+                    name="userPassword"
+                    id="userPassword"
+                  />
+                </label>
+              </div>
+              <div class="input-box">
+                <label for="nameRede">
+                  <span>Nome da rede</span>
+                  <input type="text" name="nameRede" id="nameRede" />
+                </label>
+                <label for="senhaRede">
+                  <span>Senha da rede</span>
+                  <input type="password" name="senhaRede" id="senhaRede" />
+                </label>
+              </div>
+              <div class="input-box">
+                <label for="enderecoMacEsp">
+                  <span
+                    >Endereço MAC do Módulo de Wifi / ESP 32<i
+                      class="fa-solid fa-circle-info"
+                    ></i
+                  ></span>
+                  <input
+                    type="text"
+                    name="enderecoMacEsp"
+                    id="enderecoMacEsp"
+                  />
+                </label>
+              </div>
+            </div>
+            <button class="btn-register">Cadastrar</button>
+            <div class="mensagem-registro-realizado" style="display: none">
+              <span>Seu cadastro foi realizado com sucesso!</span>
+            </div>
+            <div class="mensagem-registro-nao-realizado" style="display: none">
+              <span>Seu cadastro não foi realizado!</span>
+            </div>
+          </form>
+        </div>
+        <div class="container__description">
+          <div class="description__content">
+            <p>
+              Recomendamos que cadastre a sua rede wi-fi principal da
+              residência, pois, as informações serão passadas a partir de uma
+              conexão estavel a um provedor de internet/wi-fi.
+            </p>
+            <p>
+              Nos comprometemos a deixar suas informações seguras e atualizações
+              e aprimoramento serão sendo lançadas em breve.
+            </p>
+            <p>
+              Informamos que as informações aqui passadas são de acordo com os
+              valores e métricas seguidas pela CPFL Paulista 2023.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
-  <footer>
-    <h4>
-      Projeto Integrador | Aplicação Web - Medidor de Consumo de Energia  
-    </h4>
-  </footer>
-  <script src="./js/pages/register.js"></script>
-  <script src="./js/index.js"></script>
-</body>
+    </main>
+    <footer>
+      <h4>
+        Projeto Integrador | Aplicação Web - Medidor de Consumo de Energia
+      </h4>
+    </footer>
+    <script src="./js/pages/register.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
 </html>
