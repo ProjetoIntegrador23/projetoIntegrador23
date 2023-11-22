@@ -29,11 +29,3 @@ function logout() {
   localStorage.removeItem("userLoggedIn");
   localStorage.removeItem("userData");
 }
-
-// CONDIÇÕES
-if (localStorage.getItem("userLoggedIn") === "true") {
-  console.log("Usuário está logado!");
-  console.log(localStorage.getItem("userData"));
-} else {
-  console.log("Usuário não está logado!");
-}
