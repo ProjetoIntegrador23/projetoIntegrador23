@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meu consumo de energia | Home</title>
+    <title>Meu Consumo de Energia | Home</title>
     <link rel="icon" href="./img/logo/logoPrincipal.png" />
     <!-- CSS -->
     <link rel="stylesheet" href="./css/home.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <!-- JS -->
-    <script
+    <script 
       src="https://kit.fontawesome.com/026675cdf7.js"
       crossorigin="anonymous"
     ></script>
@@ -20,15 +20,6 @@
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
-    <script>
-      function checkLoginStatus() {
-        const userLoggedIn = localStorage.getItem("userLoggedIn");
-        if (userLoggedIn !== "true") {
-          window.location.href = "../index.html";
-        }
-      }
-      checkLoginStatus();
-    </script>
   </head>
   <body>
     <header>
