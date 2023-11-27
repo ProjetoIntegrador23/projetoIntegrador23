@@ -19,17 +19,23 @@ const nomeUsuario = document.querySelector("#nameUser");
 const emailUsuario = document.querySelector("#userEmail");
 const senhaUsuario = document.querySelector("#userPassword");
 const redeWifi = document.querySelector("#nameRede");
-const senhaWifi = document.querySelector("#senhaRede");
+const senhaWifi = document.querySelector("#senhaRede"); 
 const moduloWifi = document.querySelector("#enderecoMacEsp");
 const buttonForm = document.querySelector(".btn-register");
 
+function encryptPassword(password, secretKey) {
+  return CryptoJS.AES.encrypt(password, secretKey).toString();
+}
 buttonForm.addEventListener("click", function (e) {
+  const encryptedPassword = encryptPassword(senhaUsuario.value, 'pR0Jet01nt&gr@d0R02!');
+  const encryptedPasswordRede = encryptPassword(senhaWifi.value, 'pR0Jet01nt&gr@d0R02!');
+
   const newUsuario = createUsuario(
     nomeUsuario.value,
     emailUsuario.value,
-    senhaUsuario.value,
+    encryptedPassword,
     redeWifi.value,
-    senhaWifi.value,
+    encryptedPasswordRede,
     moduloWifi.value
   );
   validateEmail(emailUsuario.value);
@@ -63,3 +69,5 @@ function createUsuario(name, email, senha, rede, senhaRede, modulo) {
 
   return 1;
 }
+
+

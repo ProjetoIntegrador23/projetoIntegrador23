@@ -17,9 +17,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
     <script>
       function checkLoginStatus() {
         const userLoggedIn = localStorage.getItem("userLoggedIn");
@@ -56,9 +55,9 @@
           </li>
           <li class="menu__item"><a href="./perfil.html">Perfil</a></li>
           <li class="menu__item">
-            <a href="./index.html"
-              ><i class="fa-solid fa-right-from-bracket"></i
-            ></a>
+            <button class="logout" onclick="logout()"
+            ><i class="fa-solid fa-right-from-bracket"></i
+          ></button>
           </li>
         </ul>
       </nav>
@@ -133,6 +132,7 @@
               </div>
             </div>
             <button class="btn-define" type="submit">DEFINIR</button>
+            <button class="delete-meta">DELETAR META</button>
 
             <figure class="form__image">
               <img src="./img/geral/database.png" alt="Imagem" />

@@ -166,9 +166,7 @@ if (localStorage.getItem("userLoggedIn") === "true") {
                     ? `${leitura.amperes} A`
                     : "Não informado";
                 const voltsText =
-                  leitura.volts !== ""
-                    ? `${leitura.amperes} V`
-                    : "Não informado";
+                  leitura.volts !== "" ? `${leitura.volts} V` : "Não informado";
                 const wattsText =
                   leitura.watts !== "" ? `${leitura.watts} W` : "Não informado";
 

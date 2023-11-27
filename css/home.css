@@ -84,6 +84,21 @@ header .navigation__menu li a:hover {
   color: #f7d90f;
 }
 
+header .navigation__menu li .logout {
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400; 
+  line-height: normal;
+  background: unset;
+  border: unset;
+  cursor: pointer;
+}
+
+header .navigation__menu li .logout:hover {
+  color: #f7d90f;
+}
+
 /* MAIN */
 
 main {
@@ -300,10 +315,8 @@ main
   .goal__progress
   .progress__bar
   .progress-bar__indicator {
-  width: 50%;
   height: 100%;
   border-radius: 20px;
-  background: #07d227;
   transition: all 0.5s;
 }
 

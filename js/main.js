@@ -28,4 +28,7 @@ button_header_navigation.addEventListener("click", () => {
 function logout() {
   localStorage.removeItem("userLoggedIn");
   localStorage.removeItem("userData");
+  setTimeout(function () {
+    window.location.href = "../index.html";
+  }, 500);
 }
