@@ -19,6 +19,8 @@ if (localStorage.getItem("userLoggedIn") === "true") {
     const voltsData = document.getElementById("voltsData");
     const amperesData = document.getElementById("amperesData");
     const wattsData = document.getElementById("wattsData");
+    const textMeta = document.getElementById("metaUsuarioDefinida");
+    const textAtingirMeta = document.getElementById("qtdAtingirMeta");
 
     const userData = JSON.parse(userDataString);
     const userID = userData.userId;
@@ -28,17 +30,12 @@ if (localStorage.getItem("userLoggedIn") === "true") {
       .once("value")
       .then((snapshot) => {
         const usuario = snapshot.val();
-
         nomeUsuarioElement.textContent = `Olá, ${usuario.name}!`;
       })
       .catch((error) => {
         console.error("Erro ao acessar os dados do usuário!:", error);
       });
 
-    const wifiRef = firebase.database().ref("Usuario/" + userID + "/redeWifi");
-    const moduloWifiRef = firebase
-      .database()
-      .ref("Usuario/" + userID + "/moduloWifi");
     const leituras = firebase.database().ref("Usuario/" + userID + "/leituras");
 
     //  FUNÇÃO PARA ATUALIZAR OS VOLTS AMPARES E WATTS
@@ -47,7 +44,7 @@ if (localStorage.getItem("userLoggedIn") === "true") {
       .once("value")
       .then((snapshot) => {
         const ultimaLeitura = snapshot.val();
-  
+
         if (ultimaLeitura) {
           for (const leituraID in ultimaLeitura) {
             const leitura = ultimaLeitura[leituraID];
@@ -66,6 +63,21 @@ if (localStorage.getItem("userLoggedIn") === "true") {
       });
 
     // FUNÇÃO PARA ATUALIZAR A BARRA DE PROGRESS
+    function updateProgress(progress, total) {
+      const progressBar = document.querySelector(".progress-bar__indicator");
+      const percentage = (progress / total) * 100;
+      progressBar.style.width = percentage + "%";
+      if (percentage < 50) {
+        progressBar.style.backgroundColor = "#07D227";
+      }
+      if (percentage > 50 && percentage < 101) {
+        progressBar.style.backgroundColor = "#F7D90F";
+      }
+      if (percentage > 100) {
+        progressBar.style.backgroundColor = "#D20707";
+      }
+    }
+
     const metaRef = firebase
       .database()
       .ref("Usuario/" + userID + "/metaConsumo");
@@ -73,9 +85,77 @@ if (localStorage.getItem("userLoggedIn") === "true") {
       .once("value")
       .then((snapshot) => {
         const meta = snapshot.val();
-        // if (meta) {
+        if (meta) {
+          const valueMeta = meta.meta;
+          const tipoMeta = meta.tipoMeta;
 
-        // } 
+          const leituras = firebase
+            .database()
+            .ref("Usuario/" + userID + "/leituras");
+
+          const dataAtual = new Date();
+          const mesAtual = dataAtual.getMonth() + 1;
+
+          if (tipoMeta === "volts") {
+            textMeta.textContent = `${valueMeta} Volts`;
+            leituras.once("value", (snapshot) => {
+              let totalVolts = 0;
+              snapshot.forEach((childSnapshot) => {
+                const leitura = childSnapshot.val();
+                const leituraData = leitura.data;
+                const mesLeitura = parseInt(leituraData.split("-")[1]);
+                if (mesLeitura === mesAtual) {
+                  const voltsValue =
+                    leitura.volts !== "" ? parseFloat(leitura.volts) : 0;
+                  totalVolts += voltsValue;
+                }
+              });
+              updateProgress(totalVolts, valueMeta);
+              if (totalVolts < valueMeta) {
+                let valorAtualMeta = valueMeta - totalVolts;
+                textAtingirMeta.textContent = `Você tem ainda: ${valorAtualMeta.toFixed(
+                  2
+                )} volts para atingir a meta.`;
+              } else {
+                let valorAtualMeta = totalVolts - valueMeta;
+                textAtingirMeta.textContent = `Você já usou: ${valorAtualMeta.toFixed(
+                  2
+                )} volts da sua meta definida.`;
+              }
+            });
+          } else if (tipoMeta === "watts") {
+            textMeta.textContent = `${valueMeta} Watts`;
+            leituras.once("value", (snapshot) => {
+              let totalWatts = 0;
+              snapshot.forEach((childSnapshot) => {
+                const leitura = childSnapshot.val();
+                const leituraData = leitura.data;
+                const mesLeitura = parseInt(leituraData.split("-")[1]);
+                if (mesLeitura === mesAtual) {
+                  const wattsValue =
+                    leitura.watts !== "" ? parseFloat(leitura.watts) : 0;
+                  totalWatts += wattsValue;
+                }
+              });
+              updateProgress(totalWatts, valueMeta);
+              if (totalWatts < valueMeta) {
+                let valorAtualMeta = valueMeta - totalWatts;
+                textAtingirMeta.textContent = `Você tem ainda: ${valorAtualMeta.toFixed(
+                  2
+                )} watts para atingir a meta.`;
+              } else {
+                let valorAtualMeta = totalWatts - valueMeta;
+                textAtingirMeta.textContent = `Você já usou: ${valorAtualMeta.toFixed(
+                  2
+                )} watts da sua meta definida.`;
+              }
+            });
+          }
+        } else {
+          textMeta.textContent = "Você ainda não definiu uma meta de consumo!";
+          textAtingirMeta.textContent =
+            "Cadastre uma meta de consumo no perfil do usuário :)";
+        }
       })
       .catch((error) => {
         console.error("Erro ao acessar o banco de dados:", error);

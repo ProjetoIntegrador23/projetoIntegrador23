@@ -2,9 +2,14 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "crypto-js": "^4.2.0",
+    "express": "^4.18.2",
     "firebase": "^10.4.0",
     "firebase-admin": "^11.11.0",
-    "js-sha256": "^0.10.1"
+    "firebase-functions": "^4.5.0",
+    "js-sha256": "^0.10.1",
+    "nodemon": "^3.0.1"
   },
   "devDependencies": {
     "webpack": "^5.88.2",
@@ -15,8 +20,8 @@
   },
   "name": "public",
   "version": "1.0.0",
-  "main": "init-firebase.js",
-  "author": "",
+  "main": "index.js",
+  "author": "Giovana Oliveira",
   "license": "ISC",
   "keywords": [],
   "description": "Giovana Oliveira \r Giovana Castro  \r Isabella Estella  \r Marcela Coenglian  \r Amanda Acosta \r Beatriz Barbosa \r <!--\r **ProjetoIntegrador23/projetoIntegrador23** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile."

@@ -17,15 +17,29 @@ if (localStorage.getItem("userLoggedIn") === "true") {
     const enderecoMac = document.querySelector("#enderecoMacWifi");
     const valorMeta = document.querySelector("#valueMeta");
     const tipoMeta = document.querySelector("#typeMeta");
+    const deleteMeta = document.querySelector(".delete-meta");
 
-    inputName.value = userData.nome;
-    inputEmail.value = userData.email;
+    function encryptPassword(password, secretKey) {
+      return CryptoJS.AES.encrypt(password, secretKey).toString();
+    }
+
+    function decryptPassword(encryptedPassword, secretKey) {
+      const bytes = CryptoJS.AES.decrypt(encryptedPassword, secretKey);
+      const originalPassword = bytes.toString(CryptoJS.enc.Utf8);
+      return originalPassword;
+    }
 
     userRef
       .once("value")
       .then((snapshot) => {
         const user = snapshot.val();
-        inputSenha.value = user.senha;
+        inputName.value = user.name;
+        inputEmail.value = user.email;
+        const senhaDescriptografada = decryptPassword(
+          user.senha,
+          "pR0Jet01nt&gr@d0R02!"
+        );
+        inputSenha.value = senhaDescriptografada;
       })
       .catch((error) => {
         console.log(
@@ -39,7 +53,11 @@ if (localStorage.getItem("userLoggedIn") === "true") {
       .then((snapshot) => {
         const wifi = snapshot.val();
         nameRede.value = wifi.rede;
-        senhaRede.value = wifi.senha;
+        const senhaRedeDescriptografada = decryptPassword(
+          wifi.senhaRede,
+          "pR0Jet01nt&gr@d0R02!"
+        );
+        senhaRede.value = senhaRedeDescriptografada;
       })
       .catch((error) => {
         console.log(
@@ -62,15 +80,23 @@ if (localStorage.getItem("userLoggedIn") === "true") {
     // ALTERAR DADOS
     formAlter.addEventListener("submit", function (event) {
       event.preventDefault();
+      const encryptedPassword = encryptPassword(
+        inputSenha.value,
+        "pR0Jet01nt&gr@d0R02!"
+      );
+      const encryptedPasswordRede = encryptPassword(
+        senhaRede.value,
+        "pR0Jet01nt&gr@d0R02!"
+      );
       userRef
         .update({
           userId: userID,
           name: inputName.value,
           email: inputEmail.value,
-          senha: inputSenha.value,
+          senha: encryptedPassword,
           redeWifi: {
             rede: nameRede.value,
-            senhaRede: senhaRede.value,
+            senhaRede: encryptedPasswordRede,
           },
           moduloWifi: {
             modulo: enderecoMac.value,
@@ -129,6 +155,27 @@ if (localStorage.getItem("userLoggedIn") === "true") {
         console.error("Erro ao acessar o banco de dados:", error);
       });
 
+    // DELETAR META DE CONSUMO
+    deleteMeta.addEventListener("click", function (e) {
+      e.preventDefault();
+      const confirmDeleteMeta = confirm(
+        "Tem certeza de que deseja excluir sua meta?"
+      );
+      if (confirmDeleteMeta) {
+        metaRef
+          .remove()
+          .then(() => {
+            alert("Sua meta foi deletada com sucesso!");
+            setTimeout(function () {
+              window.location.href = "../perfil.html";
+            }, 500);
+          })
+          .catch((error) => {
+            console.error("Erro ao excluir meta:", error.message);
+          });
+      }
+    });
+
     // EXCLUIR CONTA
     const buttonDelete = document.querySelector(".btn-delete");
     buttonDelete.addEventListener("click", function (e) {
@@ -161,4 +208,3 @@ if (localStorage.getItem("userLoggedIn") === "true") {
     window.location.href = "../index.html";
   }, 500);
 }
- 
