@@ -551,6 +551,9 @@ footer h4 {
   header .navigation__menu li a {
     color: #000;
   }
+  header .navigation__menu li .logout {
+    color: #000;
+  }
   main .main__container .container__goal {
     height: auto;
     flex-direction: column;
