@@ -125,81 +125,97 @@ if (localStorage.getItem("userLoggedIn") === "true") {
         clickedElement.classList.add("selected");
         const clickedDay = parseInt(clickedElement.textContent);
         const clickedDate = new Date(currYear, currMonth, clickedDay);
+        console.log(clickedDate);
         const leiturasRef = firebase
           .database()
           .ref(`Usuario/${userID}/leituras`);
-        leiturasRef
-          .orderByChild("data")
-          .equalTo(formatDate(clickedDate))
-          .once("value")
-          .then((snapshot) => {
-            const leituras = snapshot.val();
-            if (leituras) {
-              for (var i = contentReadingsChilds.length - 1; i >= 0; i--) {
-                contentReadings.removeChild(contentReadingsChilds[i]);
-              }
-              for (var i = contentTotalChilds.length - 1; i >= 0; i--) {
-                contentTotal.removeChild(contentTotalChilds[i]);
-              }
-              let totalAmperes = 0;
-              let totalVolts = 0;
-              let totalWatts = 0;
 
-              let listReadings = document.createElement("ul");
-              for (const leiturasID in leituras) {
-                const leitura = leituras[leiturasID];
+        leiturasRef.on("value", (snapshot) => {
+          const leituras = snapshot.val();
+
+          if (leituras) {
+
+            for (var i = contentReadingsChilds.length - 1; i >= 0; i--) {
+              contentReadings.removeChild(contentReadingsChilds[i]);
+            }
+            for (var i = contentTotalChilds.length - 1; i >= 0; i--) {
+              contentTotal.removeChild(contentTotalChilds[i]);
+            }
+
+            let listReadings = document.createElement("ul");
+
+            for (const leiturasID in leituras) {
+
+              const leitura = leituras[leiturasID];
+
+              if (leiturasID === formatDate(clickedDate)) {
+                for (var i = contentReadingsChilds.length - 1; i >= 0; i--) {
+                  contentReadings.removeChild(contentReadingsChilds[i]);
+                }
+                for (var i = contentTotalChilds.length - 1; i >= 0; i--) {
+                  contentTotal.removeChild(contentTotalChilds[i]);
+                }
+               
                 let itemReading = document.createElement("li");
 
                 const amperesValue =
-                  leitura.amperes !== "" ? parseFloat(leitura.amperes) : 0;
+                  leitura.Ampere !== "" ? parseFloat(leitura.Ampere) : 0;
                 const voltsValue =
-                  leitura.volts !== "" ? parseFloat(leitura.volts) : 0;
+                  leitura.Volts !== "" ? parseFloat(leitura.Volts) : 0;
                 const wattsValue =
-                  leitura.watts !== "" ? parseFloat(leitura.watts) : 0;
-
-                totalAmperes += amperesValue;
-                totalVolts += voltsValue;
-                totalWatts += wattsValue;
+                  leitura.Watts !== "" ? parseFloat(leitura.Watts) : 0;
 
                 const amperesText =
-                  leitura.amperes !== ""
-                    ? `${leitura.amperes} A`
+                  leitura.Amperes !== ""
+                    ? `${leitura.Ampere} A`
                     : "Não informado";
                 const voltsText =
-                  leitura.volts !== "" ? `${leitura.volts} V` : "Não informado";
+                  leitura.Volts !== "" ? `${leitura.Volts} V` : "Não informado";
                 const wattsText =
-                  leitura.watts !== "" ? `${leitura.watts} W` : "Não informado";
+                  leitura.Watts !== "" ? `${leitura.Watts} W` : "Não informado";
 
                 itemReading.innerHTML = `<h3>Leitura</h3>
-                <span>Amperes: ${amperesText} </span>
-                <span>Volts: ${voltsText} </span>
-                <span>Watts: ${wattsText} </span>
-                `;
+                  <span>Amperes: ${amperesText} </span>
+                  <span>Volts: ${voltsText} </span>
+                  <span>Watts: ${wattsText} </span>
+                  `;
                 listReadings.appendChild(itemReading);
+                contentReadings.appendChild(listReadings);
+               
+                contentListTotal.innerHTML = `<li>Amperes:  ${totalAmperes} </li><li>Volts:  ${totalVolts} </li><li>Watts:  ${totalWatts} </li>`;
+                contentTotal.appendChild(contentListTotal);
+                console.log("Leituras do dia:", leituras);
+              }else {
+                for (var i = contentReadingsChilds.length - 1; i >= 0; i--) {
+                  contentReadings.removeChild(contentReadingsChilds[i]);
+                }
+                for (var i = contentTotalChilds.length - 1; i >= 0; i--) {
+                  contentTotal.removeChild(contentTotalChilds[i]);
+                }
+                let message_errror = document.createElement("span");
+                message_errror.classList.add("message-error");
+                message_errror.textContent =
+                  "Nenhuma leitura para o dia selecionado.";
+                contentReadings.appendChild(message_errror);
+                console.log("Não há nenhuma leitura registrada!");
               }
-              contentReadings.appendChild(listReadings);
-              contentTotal.innerHTML = "<h3>Total</h3>";
-              contentListTotal.innerHTML = `<li>Amperes:  ${totalAmperes} </li><li>Volts:  ${totalVolts} </li><li>Watts:  ${totalWatts} </li>`;
-              contentTotal.appendChild(contentListTotal);
-              console.log("Leituras do dia:", leituras);
-            } else {
-              for (var i = contentReadingsChilds.length - 1; i >= 0; i--) {
-                contentReadings.removeChild(contentReadingsChilds[i]);
-              }
-              for (var i = contentTotalChilds.length - 1; i >= 0; i--) {
-                contentTotal.removeChild(contentTotalChilds[i]);
-              }
-              let message_errror = document.createElement("span");
-              message_errror.classList.add("message-error");
-              message_errror.textContent =
-                "Nenhuma leitura para o dia selecionado.";
-              contentReadings.appendChild(message_errror);
-              console.log("Nenhuma leitura para o dia selecionado.");
+             
             }
-          })
-          .catch((error) => {
-            console.error("Erro ao acessar o banco de dados:", error);
-          });
+          } else {
+            for (var i = contentReadingsChilds.length - 1; i >= 0; i--) {
+              contentReadings.removeChild(contentReadingsChilds[i]);
+            }
+            for (var i = contentTotalChilds.length - 1; i >= 0; i--) {
+              contentTotal.removeChild(contentTotalChilds[i]);
+            }
+            let message_errror = document.createElement("span");
+            message_errror.classList.add("message-error");
+            message_errror.textContent =
+              "Nenhuma leitura para o dia selecionado.";
+            contentReadings.appendChild(message_errror);
+            console.log("Não há nenhuma leitura registrada!");
+          }
+        });
       }
     });
     function formatDate(date) {
