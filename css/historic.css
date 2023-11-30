@@ -370,6 +370,9 @@ footer h4 {
   header .navigation__menu li a {
     color: #000;
   }
+  header .navigation__menu li .logout {
+    color: #000;
+  }
   main .wrapper-readings {
     max-width: 600px;
     width: 95%;

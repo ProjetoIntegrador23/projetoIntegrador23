@@ -22,6 +22,12 @@ if (localStorage.getItem("userLoggedIn") === "true") {
     const textMeta = document.getElementById("metaUsuarioDefinida");
     const textAtingirMeta = document.getElementById("qtdAtingirMeta");
 
+    // DADOS DE DATA
+    let date = new Date(),
+      currYear = date.getFullYear(),
+      currMonth = date.getMonth(),
+      diaAtual = date.getDate();
+
     const userData = JSON.parse(userDataString);
     const userID = userData.userId;
 
@@ -36,31 +42,27 @@ if (localStorage.getItem("userLoggedIn") === "true") {
         console.error("Erro ao acessar os dados do usuário!:", error);
       });
 
-    const leituras = firebase.database().ref("Usuario/" + userID + "/leituras");
-
     //  FUNÇÃO PARA ATUALIZAR OS VOLTS AMPARES E WATTS
-    leituras
-      .limitToLast(1)
-      .once("value")
-      .then((snapshot) => {
-        const ultimaLeitura = snapshot.val();
+    const leiturasRef = firebase
+      .database()
+      .ref("Usuario/" + userID + "/leituras");
 
-        if (ultimaLeitura) {
-          for (const leituraID in ultimaLeitura) {
-            const leitura = ultimaLeitura[leituraID];
-            voltsData.textContent = `${leitura.volts} Volts (V)`;
-            amperesData.textContent = `${leitura.amperes} Amperes (A)`;
-            wattsData.textContent = `${leitura.watts} Watts (W)`;
-          }
-        } else {
-          voltsData.textContent = `Nenhum valor registrado`;
-          amperesData.textContent = `Nenhum valor registrado`;
-          wattsData.textContent = `Nenhum valor registrado`;
+    leiturasRef.on("value", (snapshot) => {
+      const leitura = snapshot.val();
+      for (const leituraData in leitura) {
+        const leituraAtual = leitura[leituraData];
+        const dataFormat = new Date(currYear, currMonth, diaAtual);
+        const atualData = formatDate(dataFormat);
+        if (leituraData === atualData) {
+          const leituraAmpere = leituraAtual.Ampere;
+          const leituraVolts = leituraAtual.Volts;
+          const leituraWatts = leituraAtual.Watts;
+          $("#voltsData").text("" + leituraVolts + " Volts(V)");
+          $("#amperesData").text("" + leituraAmpere + " Ampere(A)");
+          $("#wattsData").text("" + leituraWatts + " Watts(W)");
         }
-      })
-      .catch((error) => {
-        console.error("Erro ao acessar o banco de dados:", error);
-      });
+      }
+    });
 
     // FUNÇÃO PARA ATUALIZAR A BARRA DE PROGRESS
     function updateProgress(progress, total) {
@@ -92,62 +94,39 @@ if (localStorage.getItem("userLoggedIn") === "true") {
           const leituras = firebase
             .database()
             .ref("Usuario/" + userID + "/leituras");
-
           const dataAtual = new Date();
           const mesAtual = dataAtual.getMonth() + 1;
-
-          if (tipoMeta === "volts") {
-            textMeta.textContent = `${valueMeta} Volts`;
-            leituras.once("value", (snapshot) => {
-              let totalVolts = 0;
-              snapshot.forEach((childSnapshot) => {
-                const leitura = childSnapshot.val();
-                const leituraData = leitura.data;
-                const mesLeitura = parseInt(leituraData.split("-")[1]);
-                if (mesLeitura === mesAtual) {
-                  const voltsValue =
-                    leitura.volts !== "" ? parseFloat(leitura.volts) : 0;
-                  totalVolts += voltsValue;
-                }
-              });
-              updateProgress(totalVolts, valueMeta);
-              if (totalVolts < valueMeta) {
-                let valorAtualMeta = valueMeta - totalVolts;
-                textAtingirMeta.textContent = `Você tem ainda: ${valorAtualMeta.toFixed(
-                  2
-                )} volts para atingir a meta.`;
-              } else {
-                let valorAtualMeta = totalVolts - valueMeta;
-                textAtingirMeta.textContent = `Você já usou: ${valorAtualMeta.toFixed(
-                  2
-                )} volts da sua meta definida.`;
-              }
-            });
-          } else if (tipoMeta === "watts") {
+          if (tipoMeta === "watts") {
             textMeta.textContent = `${valueMeta} Watts`;
-            leituras.once("value", (snapshot) => {
+            leituras.on("value", (snapshot) => {
               let totalWatts = 0;
-              snapshot.forEach((childSnapshot) => {
-                const leitura = childSnapshot.val();
-                const leituraData = leitura.data;
+              const leitura = snapshot.val();
+              for (const leituraData in leitura) {
+                const leituraAtual = leitura[leituraData];
                 const mesLeitura = parseInt(leituraData.split("-")[1]);
                 if (mesLeitura === mesAtual) {
                   const wattsValue =
-                    leitura.watts !== "" ? parseFloat(leitura.watts) : 0;
+                    leituraAtual.Watts !== ""
+                      ? parseFloat(leituraAtual.Watts)
+                      : 0;
                   totalWatts += wattsValue;
                 }
-              });
+              }
               updateProgress(totalWatts, valueMeta);
               if (totalWatts < valueMeta) {
                 let valorAtualMeta = valueMeta - totalWatts;
-                textAtingirMeta.textContent = `Você tem ainda: ${valorAtualMeta.toFixed(
-                  2
-                )} watts para atingir a meta.`;
+                $("#qtdAtingirMeta").text(
+                  `Você tem ainda: ${valorAtualMeta.toFixed(
+                    2
+                  )} watts para atingir a meta.`
+                );
               } else {
                 let valorAtualMeta = totalWatts - valueMeta;
-                textAtingirMeta.textContent = `Você já usou: ${valorAtualMeta.toFixed(
-                  2
-                )} watts da sua meta definida.`;
+                $("#qtdAtingirMeta").text(
+                  `Você já usou: ${valorAtualMeta.toFixed(
+                    2
+                  )} watts da sua meta definida.`
+                );
               }
             });
           }
@@ -160,6 +139,14 @@ if (localStorage.getItem("userLoggedIn") === "true") {
       .catch((error) => {
         console.error("Erro ao acessar o banco de dados:", error);
       });
+
+    // FORMATAR DATA
+    function formatDate(date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const day = String(date.getDate()).padStart(2, "0");
+      return `${year}-${month}-${day}`;
+    }
   }
 } else {
   alert("Usuário não logado!");

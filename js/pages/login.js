@@ -31,7 +31,7 @@ function loginUser(email, password) {
     .once("value")
     .then((snapshot) => {
       const users = snapshot.val();
-      for (const userId in users) {
+      for (const userId in users) { 
         const user = users[userId];
         const senhaDescriptografada = decryptPassword(
           user.senha,
